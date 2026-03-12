@@ -35,8 +35,9 @@ nav{
   transition:all .3s
 }
 nav.scrolled{
-  background:rgba(6,9,16,0.85);backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border)
+  background:rgba(0,15,40,0.82);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(0,97,255,.15);
+  box-shadow:0 4px 30px rgba(0,97,255,.07)
 }
 .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between}
 .logo{font-size:1.35rem;font-weight:800;letter-spacing:-.5px;color:var(--white)}
@@ -73,10 +74,9 @@ nav.scrolled{
   background-size:60px 60px;
   mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, black 30%, transparent 100%)
 }
-/* Glow blobs */
-.hero-glow1{position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(59,130,246,.18) 0%,transparent 70%);pointer-events:none}
-.hero-glow2{position:absolute;bottom:0;left:10%;width:400px;height:400px;background:radial-gradient(ellipse,rgba(29,78,216,.12) 0%,transparent 70%);pointer-events:none}
-.hero-glow3{position:absolute;bottom:0;right:5%;width:350px;height:350px;background:radial-gradient(ellipse,rgba(96,165,250,.08) 0%,transparent 70%);pointer-events:none}
+.hero-glow1{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% 50%,rgba(0,97,255,.28) 0%,rgba(0,73,204,.1) 50%,transparent 75%);pointer-events:none}
+.hero-glow2{display:none}
+.hero-glow3{display:none}
 
 .hero-content{position:relative;z-index:1;max-width:900px;margin:0 auto}
 .hero-badge{
