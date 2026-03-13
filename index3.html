@@ -11,7 +11,6 @@
   --blue:#135bec;
   --blue2:#0d46c0;
   --blue3:#e8f0fe;
-  --blue4:#c7d9fd;
   --ink:#09090f;
   --ink2:#1a1a2a;
   --muted:#6c6c84;
@@ -22,62 +21,49 @@
 html{scroll-behavior:smooth}
 body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
 
-/* ── NAV ── */
-.nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:#f0f5fb;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;transition:background .35s ease,backdrop-filter .35s ease,box-shadow .35s ease}
+.nav.scrolled{background:rgb(240 245 251 / 70%);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(19,91,236,.08)}
 .logo{font-size:18px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.3px}
 .logo span{color:var(--blue)}
 .nav-links{display:flex;gap:4px}
 .nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:7px 14px;border-radius:8px;transition:.15s}
 .nav-links a:hover{color:var(--ink);background:var(--off)}
-.nav-cta{background:var(--blue);color:#fff;border-radius:50px;padding:9px 22px;font-size:13px;font-weight:700;text-decoration:none;transition:.15s;letter-spacing:.1px}
+.nav-cta{background:var(--blue);color:#fff;border-radius:50px;padding:9px 22px;font-size:13px;font-weight:700;text-decoration:none;transition:.15s}
 .nav-cta:hover{background:var(--blue2)}
 
-/* ── HERO: FULL-SCREEN ASYMMETRIC ── */
-  .hero{min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr;position:relative;background:linear-gradient(135deg,#eaf1ff 0%,#f5f8ff 40%,#e0ecff 70%,#dbeafe 100%)}
-.hero-main{padding:120px 48px 100px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;width:100%}
-.pill-label{display:inline-flex;align-items:center;gap:6px;background:var(--blue3);color:var(--blue2);font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:28px}
+/* HERO */
+.hero{min-height:calc(100vh - 64px);position:relative;background:linear-gradient(to top,#cce0fd 0%,#f0f5fb 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgb(136 175 255 / 10%) 1px,transparent 1px),linear-gradient(90deg,rgb(136 175 255 / 10%) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.hero-main{position:relative;z-index:1;padding:100px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
+.pill-label{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#0d46c0;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:28px}
 .pill-dot{width:6px;height:6px;background:var(--blue);border-radius:50%}
-.hero-h1{font-size:clamp(44px,5.5vw,76px);font-weight:900;line-height:1.0;letter-spacing:-3px;color:var(--ink);margin-bottom:24px}
-.hero-h1 .line2{color:var(--blue)}
-.hero-h1 .line3{color:#c8c8d8;font-weight:600}
+.hero-h1{font-size:clamp(44px,5.5vw,76px);font-weight:900;line-height:1.05;letter-spacing:-3px;color:#135bec;margin-bottom:8px}
+.hero-line3{display:block;font-size:clamp(44px,5.5vw,76px);font-weight:900;line-height:1.05;letter-spacing:-3px;color:#3e3e3e;margin-bottom:24px;min-height:1.1em}
 .hero-p{font-size:17px;color:var(--muted);line-height:1.75;max-width:560px;margin:0 auto 40px;font-weight:400}
-.email-form{display:flex;background:rgba(255,255,255,.85);border:1.5px solid rgba(19,91,236,.15);border-radius:14px;padding:6px;gap:6px;max-width:500px;margin:0 auto 20px;backdrop-filter:blur(8px)}
+.email-form{display:flex;background:rgba(255,255,255,.85);border:1.5px solid rgba(19,91,236,.15);border-radius:14px;padding:6px;gap:6px;max-width:500px;width:100%;margin:0 auto 20px;backdrop-filter:blur(8px)}
 .email-form input{flex:1;background:none;border:none;outline:none;font-family:'Poppins',sans-serif;font-size:14px;color:var(--ink);padding:8px 12px}
 .email-form input::placeholder{color:#aaa}
-.btn-blue{background:var(--blue);color:#fff;border:none;border-radius:10px;padding:11px 22px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;white-space:nowrap;letter-spacing:.2px}
+.btn-blue{background:var(--blue);color:#fff;border:none;border-radius:10px;padding:11px 22px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;white-space:nowrap}
 .btn-blue:hover{background:var(--blue2)}
 .hero-proof{font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
-.proof-flag{font-size:16px}
-.sidebar-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:20px}
-.match-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
-.match-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:14px;transition:.2s}
-.match-card.top{background:rgba(19,91,236,.25);border-color:rgba(19,91,236,.4)}
-.mc-score{font-size:13px;font-weight:800;color:var(--blue);background:rgba(19,91,236,.15);padding:6px 10px;border-radius:8px;letter-spacing:-.3px;white-space:nowrap}
-.mc-score.dim{color:rgba(255,255,255,.4);background:rgba(255,255,255,.06)}
-.mc-name{font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;letter-spacing:-.1px}
-.mc-sub{font-size:11px;color:rgba(255,255,255,.35);font-weight:500}
-.mc-amt{font-size:15px;font-weight:800;color:#fff;margin-left:auto;white-space:nowrap;letter-spacing:-.5px}
-.sidebar-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:28px}
-.sidebar-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.ss-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:16px 18px}
-.ss-num{font-size:28px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1}
-.ss-lbl{font-size:11px;color:rgba(255,255,255,.35);margin-top:4px;font-weight:500;line-height:1.4}
 
-/* ── MARQUEE ── */
-.marquee{background:var(--blue);height:42px;overflow:hidden;display:flex;align-items:center}
-.marquee-track{display:flex;gap:0;animation:slide 35s linear infinite;white-space:nowrap}
-.marquee-item{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.6);padding:0 32px;border-right:1px solid rgba(255,255,255,.12);display:flex;align-items:center;height:42px}
+/* MARQUEE */
+.marquee{background:#5c84d5;height:42px;overflow:hidden;display:flex;align-items:center}
+.marquee-track{display:flex;animation:slide 35s linear infinite;white-space:nowrap}
+.marquee-item{font-size:11px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#fff;padding:0 32px;border-right:1px solid rgba(255,255,255,.2);display:flex;align-items:center;height:42px}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* STATS ROW */
+.stats-row{background:var(--off);padding:64px 48px}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.stat-cell{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px 32px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+.stat-cell:hover{transform:translateY(-3px);border-color:rgba(19,91,236,.3)}
+.stat-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,#135bec,#3575f7)}
+.sc-num{font-size:44px;font-weight:900;color:var(--blue);letter-spacing:-2px;line-height:1}
+.sc-label{font-size:13px;font-weight:400;color:var(--muted);line-height:1.6}
 
-/* ── STATS ROW ── */
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border)}
-.stat-cell{padding:48px 40px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:6px}
-.stat-cell:last-child{border-right:none}
-.sc-num{font-size:48px;font-weight:900;color:var(--blue);letter-spacing:-2px;line-height:1}
-.sc-label{font-size:13px;font-weight:500;color:var(--muted);line-height:1.5}
-
-/* ── MATCHES BAND ── */
+/* MATCHES BAND */
 .matches-band{background:var(--ink);padding:64px 48px;display:flex;flex-direction:column;gap:32px}
 .mb-top{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .mb-label{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.28)}
@@ -85,14 +71,14 @@ body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);o
 .mb-total-num{font-size:36px;font-weight:900;color:#fff;letter-spacing:-1.5px;line-height:1}
 .mb-total-lbl{font-size:13px;color:rgba(255,255,255,.35);font-weight:500}
 .mb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.mb-card{border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:24px 26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;transition:.2s}
+.mb-card{border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:24px 26px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
 .mb-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:rgba(255,255,255,.06);border-radius:18px 18px 0 0}
 .mb-card.top-match{border-color:rgba(19,91,236,.45);background:rgba(19,91,236,.1)}
 .mb-card.top-match::before{background:var(--blue)}
 .mb-card:hover{border-color:rgba(255,255,255,.18);transform:translateY(-2px)}
 .mb-card.top-match:hover{border-color:rgba(19,91,236,.7)}
 .mb-card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
-.mb-badge{font-size:11px;font-weight:800;background:rgba(19,91,236,.3);color:#7aa8f8;padding:4px 10px;border-radius:50px;letter-spacing:.2px;white-space:nowrap}
+.mb-badge{font-size:11px;font-weight:800;background:rgba(19,91,236,.3);color:#7aa8f8;padding:4px 10px;border-radius:50px;white-space:nowrap}
 .mb-card.top-match .mb-badge{background:var(--blue);color:#fff}
 .mb-amt{font-size:26px;font-weight:900;color:#fff;letter-spacing:-1px;line-height:1}
 .mb-name{font-size:15px;font-weight:700;color:#fff;letter-spacing:-.3px;line-height:1.3}
@@ -104,38 +90,32 @@ body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);o
 .mb-action:hover{background:rgba(19,91,236,.3)}
 .mb-bottom{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid rgba(255,255,255,.07);padding-top:24px}
 .mb-note{font-size:12px;color:rgba(255,255,255,.25);font-weight:400}
-.mb-cta{background:var(--blue);color:#fff;border:none;border-radius:50px;padding:11px 26px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;letter-spacing:.2px}
+.mb-cta{background:var(--blue);color:#fff;border:none;border-radius:50px;padding:11px 26px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:.15s}
 .mb-cta:hover{background:var(--blue2)}
 
-/* ── BENTO GRID ── */
+/* BENTO */
 .bento{padding:80px 48px;background:var(--off)}
 .bento-inner{max-width:1200px;margin:0 auto}
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
 .section-h{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1.5px;color:var(--ink);margin-bottom:48px;line-height:1.15;max-width:600px}
-.bento-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto;gap:16px}
-.b-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;overflow:hidden;position:relative;transition:.25s}
+.bento-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.b-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:36px;overflow:hidden;position:relative;transition:transform .25s,border-color .25s}
 .b-card:hover{transform:translateY(-3px);border-color:rgba(19,91,236,.3)}
-.b1{grid-column:span 5}
-.b2{grid-column:span 7}
-.b3{grid-column:span 4}
-.b4{grid-column:span 4}
-.b5{grid-column:span 4}
-.b6{grid-column:span 7;background:var(--ink)}
-.b7{grid-column:span 5}
+.b1{grid-column:span 5}.b2{grid-column:span 7}.b3{grid-column:span 4}.b4{grid-column:span 4}.b5{grid-column:span 4}.b6{grid-column:span 7;background:var(--ink)}.b7{grid-column:span 5}
 .card-tag{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--blue);background:var(--blue3);padding:4px 12px;border-radius:50px;display:inline-block;margin-bottom:18px}
 .card-tag.inv{background:rgba(19,91,236,.2);color:#7aa8f8}
 .b-card h3{font-size:18px;font-weight:700;letter-spacing:-.4px;color:var(--ink);margin-bottom:10px;line-height:1.3}
 .b-card.b6 h3{color:#fff}
-.b-card p{font-size:13px;color:var(--muted);line-height:1.7;font-weight:400}
+.b-card p{font-size:13px;color:var(--muted);line-height:1.7}
 .b-card.b6 p{color:rgba(255,255,255,.5)}
 .big-label{font-size:clamp(56px,8vw,100px);font-weight:900;letter-spacing:-4px;line-height:.9;color:var(--blue);opacity:.15;position:absolute;bottom:-10px;right:16px;pointer-events:none;font-style:italic}
 .comparison-mini{margin-top:20px;display:flex;flex-direction:column;gap:10px}
 .cm-row{display:flex;align-items:center;gap:12px}
 .cm-lbl{font-size:11px;font-weight:600;color:var(--muted);width:80px;flex-shrink:0;text-align:right}
 .cm-bar-wrap{flex:1;height:8px;background:var(--border);border-radius:50px;overflow:hidden}
-.cm-fill{height:100%;border-radius:50px}
-.cm-fill.m{background:var(--border);width:100%}
-.cm-fill.g{background:var(--blue);width:0%;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.cm-fill{height:100%;border-radius:50px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+.cm-fill.m{background:var(--border)}
+.cm-fill.g{background:var(--blue)}
 .cm-val{font-size:12px;font-weight:700;color:var(--ink);width:52px;flex-shrink:0}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
 .tc-tag{background:var(--blue3);color:#0d46c0;font-size:11px;font-weight:700;padding:5px 12px;border-radius:50px}
@@ -148,14 +128,14 @@ body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);o
 .sl-strong{font-weight:600;color:var(--ink);display:block;margin-bottom:2px}
 .sl-item.dark-item .sl-strong{color:#fff}
 
-/* ── PRICING ── */
+/* PRICING */
 .pricing{padding:80px 48px;background:var(--white)}
 .pricing-inner{max-width:1200px;margin:0 auto}
 .pricing-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:48px;gap:24px}
 .pricing-top h2{font-size:clamp(28px,3.5vw,44px);font-weight:800;letter-spacing:-1.5px;line-height:1.15}
-.pricing-top p{font-size:15px;color:var(--muted);max-width:300px;line-height:1.7;font-weight:400}
+.pricing-top p{font-size:15px;color:var(--muted);max-width:300px;line-height:1.7}
 .plan-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.plan-card{border:1.5px solid var(--border);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;position:relative;transition:.2s;background:var(--white)}
+.plan-card{border:1.5px solid var(--border);border-radius:20px;padding:32px 28px;display:flex;flex-direction:column;position:relative;transition:border-color .2s;background:var(--white)}
 .plan-card:hover{border-color:var(--blue)}
 .plan-card.hot{background:var(--blue);border-color:var(--blue)}
 .hot-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font-size:10px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;padding:4px 14px;border-radius:50px;white-space:nowrap}
@@ -166,92 +146,85 @@ body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);o
 .plan-price sup{font-size:20px;font-weight:700;letter-spacing:0}
 .plan-price small{font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0}
 .hot .plan-price small{color:rgba(255,255,255,.5)}
-.plan-tagline{font-size:12px;color:var(--muted);margin-bottom:24px;line-height:1.5;font-weight:400}
+.plan-tagline{font-size:12px;color:var(--muted);margin-bottom:24px;line-height:1.5}
 .hot .plan-tagline{color:rgba(255,255,255,.65)}
 .plan-divider{height:1px;background:var(--border);margin-bottom:20px}
 .hot .plan-divider{background:rgba(255,255,255,.15)}
 .plan-list{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;margin-bottom:24px}
-.plan-list li{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;line-height:1.5;font-weight:400}
+.plan-list li{font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
 .hot .plan-list li{color:rgba(255,255,255,.7)}
 .chk{width:15px;height:15px;flex-shrink:0;margin-top:1px}
-.plan-btn{border:1.5px solid var(--border);background:var(--white);color:var(--ink);padding:12px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:.15s;letter-spacing:.1px}
+.plan-btn{border:1.5px solid var(--border);background:var(--white);color:var(--ink);padding:12px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:700;cursor:pointer;width:100%;transition:.15s}
 .plan-btn:hover{border-color:var(--blue);color:var(--blue)}
 .hot-btn{background:var(--white);color:var(--blue);border:none;padding:12px;border-radius:10px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:800;cursor:pointer;width:100%;transition:.15s}
 .hot-btn:hover{background:rgba(255,255,255,.88)}
 
-/* ── CTA BANNER ── */
+/* CTA BANNER */
 .cta-banner{background:var(--ink);padding:80px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .cta-left .eyebrow{font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
 .cta-left h2{font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-2px;color:#fff;line-height:1.05;margin-bottom:20px}
 .cta-left h2 em{font-style:normal;color:var(--blue)}
-.cta-left p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;max-width:460px;font-weight:400}
+.cta-left p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;max-width:460px}
 .cta-right{display:flex;flex-direction:column;gap:14px}
 .cta-field-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.8px;text-transform:uppercase;margin-bottom:4px}
-.cta-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:#fff;outline:none;width:100%;transition:.2s;font-weight:400}
+.cta-input{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px 18px;font-family:'Poppins',sans-serif;font-size:14px;color:#fff;outline:none;width:100%;transition:.2s}
 .cta-input::placeholder{color:rgba(255,255,255,.25)}
 .cta-input:focus{border-color:rgba(19,91,236,.6);background:rgba(255,255,255,.1)}
-.btn-blue-lg{background:var(--blue);color:#fff;border:none;border-radius:12px;padding:15px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;width:100%;letter-spacing:.2px}
+.btn-blue-lg{background:var(--blue);color:#fff;border:none;border-radius:12px;padding:15px;font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;width:100%}
 .btn-blue-lg:hover{background:var(--blue2)}
-.cta-note{font-size:11px;color:rgba(255,255,255,.2);text-align:center;font-weight:400}
+.cta-note{font-size:11px;color:rgba(255,255,255,.2);text-align:center}
 .checklist-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:10px}
 .cl-row{display:flex;align-items:center;gap:10px;font-size:12px;color:rgba(255,255,255,.45);font-weight:500}
 .cl-circle{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .cl-circle.done{background:rgba(34,197,94,.2);border-color:rgba(34,197,94,.4)}
-.cl-circle.done svg{display:block}
-.cl-circle svg{display:none;width:10px;height:10px;stroke:#22c55e;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.cl-check{display:none;width:10px;height:10px;stroke:#22c55e;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.cl-circle.done .cl-check{display:block}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding:64px 48px 32px}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .foot-logo{font-size:20px;font-weight:900;color:#fff;letter-spacing:-.4px;margin-bottom:10px}
 .foot-logo span{color:var(--blue)}
-.foot-tagline{font-size:13px;color:rgba(255,255,255,.25);line-height:1.8;font-style:italic;max-width:250px;font-weight:400}
+.foot-tagline{font-size:13px;color:rgba(255,255,255,.25);line-height:1.8;font-style:italic;max-width:250px}
 .foot-col h5{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.2);margin-bottom:16px}
-.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:10px;transition:.15s;font-weight:400}
+.foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:10px;transition:.15s}
 .foot-col a:hover{color:#fff}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
-.foot-bottom p{font-size:11px;color:rgba(255,255,255,.2);font-weight:400}
+.foot-bottom p{font-size:11px;color:rgba(255,255,255,.2)}
 .foot-legal{display:flex;gap:20px}
 .foot-legal a{font-size:11px;color:rgba(255,255,255,.2);text-decoration:none;transition:.15s}
 .foot-legal a:hover{color:rgba(255,255,255,.6)}
 
 /* TOAST */
-.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(60px);background:var(--ink);color:#fff;padding:13px 24px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;z-index:9999;transition:transform .3s cubic-bezier(.16,1,.3,1),opacity .3s;opacity:0;pointer-events:none;white-space:nowrap}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:13px 24px;border-radius:50px;font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;z-index:9999;opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .35s;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
 .t-dot{width:7px;height:7px;background:#22c55e;border-radius:50%;flex-shrink:0}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-  .hero-main{padding:72px 48px 56px}
-  .hero-sidebar{padding:56px 48px}
   .bento-grid .b1,.bento-grid .b2,.bento-grid .b3,.bento-grid .b4,.bento-grid .b5,.bento-grid .b6,.bento-grid .b7{grid-column:span 6}
   .plan-row{grid-template-columns:1fr 1fr}
   .cta-banner{grid-template-columns:1fr;gap:48px;padding:60px 48px}
   .foot-grid{grid-template-columns:1fr 1fr}
+  .stats-inner{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
-  .nav{padding:0 20px}
-  .nav-links{display:none}
-  .hero-main,.hero-sidebar{padding:56px 24px}
+  .nav{padding:0 20px}.nav-links{display:none}
+  .hero-main{padding:72px 24px 64px}
   .bento{padding:56px 20px}
   .bento-grid .b1,.bento-grid .b2,.bento-grid .b3,.bento-grid .b4,.bento-grid .b5,.bento-grid .b6,.bento-grid .b7{grid-column:span 12}
-  .stats-row{grid-template-columns:1fr 1fr}
-  .stat-cell{padding:32px 24px}
-  .pricing{padding:56px 20px}
-  .plan-row{grid-template-columns:1fr}
-  .pricing-top{flex-direction:column;align-items:flex-start}
+  .stats-row{padding:40px 20px}.stats-inner{grid-template-columns:1fr 1fr}
+  .matches-band{padding:48px 24px}.mb-grid{grid-template-columns:1fr}
+  .pricing{padding:56px 20px}.plan-row{grid-template-columns:1fr}.pricing-top{flex-direction:column;align-items:flex-start}
   .cta-banner{padding:56px 24px}
-  footer{padding:48px 24px 24px}
-  .foot-grid{grid-template-columns:1fr;gap:28px}
-  .foot-bottom{flex-direction:column;align-items:flex-start}
+  footer{padding:48px 24px 24px}.foot-grid{grid-template-columns:1fr;gap:28px}.foot-bottom{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="nav">
+<nav class="nav" id="navbar">
   <a href="#" class="logo">Grant<span>Pilot</span></a>
   <div class="nav-links">
     <a href="#bento">Why GrantPilot</a>
@@ -263,106 +236,57 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 
 <!-- HERO -->
 <div class="hero">
+  <div class="hero-grid"></div>
   <div class="hero-main">
     <div class="pill-label"><span class="pill-dot"></span>Beachhead Pilot — Now Open</div>
-    <h1 class="hero-h1">
-      Win the<br>
-      <span class="line2">funding.</span><br>
-      <span class="line3">Skip the 80 hours.</span>
-    </h1>
+    <h1 class="hero-h1">Win the funding.</h1>
+    <div class="hero-line3" id="hero-line3">Skip the 80 hours.</div>
     <p class="hero-p">Transform your organisation's existing documents into submission-ready grant applications. GrantPilot is built for the 35,000+ Australian non-profits missing out on critical funding every year.</p>
     <div class="email-form">
       <input type="email" id="h-email" placeholder="your@organisation.org.au">
       <button class="btn-blue" onclick="sub('h-email')">Get weekly matches</button>
     </div>
-    <p class="hero-proof"><span class="proof-flag">🇦🇺</span> Designed for Australian non-profits — ACNC aligned, SmartyGrants ready.</p>
+    <p class="hero-proof">🇦🇺 Designed for Australian non-profits — ACNC aligned, SmartyGrants ready.</p>
   </div>
 </div>
 
 <!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee-track" id="mtrack"></div>
-</div>
+<div class="marquee"><div class="marquee-track" id="mtrack"></div></div>
 
 <!-- STATS ROW -->
 <div class="stats-row">
-  <div class="stat-cell">
-    <div class="sc-num">35k+</div>
-    <div class="sc-label">Australian NFPs missing out on critical government funding annually</div>
-  </div>
-  <div class="stat-cell">
-    <div class="sc-num">80h</div>
-    <div class="sc-label">Average hours spent on a single manual grant application</div>
-  </div>
-  <div class="stat-cell">
-    <div class="sc-num">94%</div>
-    <div class="sc-label">Eligibility matching accuracy across government and philanthropic streams</div>
-  </div>
-  <div class="stat-cell">
-    <div class="sc-num">2–3h</div>
-    <div class="sc-label">What it takes with GrantPilot — 15-minute bursts, three review sessions</div>
+  <div class="stats-inner">
+    <div class="stat-cell"><div class="sc-num">35k+</div><div class="sc-label">Australian NFPs missing out on critical government funding annually</div></div>
+    <div class="stat-cell"><div class="sc-num">80h</div><div class="sc-label">Average hours spent on a single manual grant application</div></div>
+    <div class="stat-cell"><div class="sc-num">94%</div><div class="sc-label">Eligibility matching accuracy across government and philanthropic streams</div></div>
+    <div class="stat-cell"><div class="sc-num">2–3h</div><div class="sc-label">What it takes with GrantPilot — 15-minute bursts, three review sessions</div></div>
   </div>
 </div>
 
 <!-- MATCHES BAND -->
 <div class="matches-band">
   <div class="mb-top">
-    <div>
-      <div class="mb-label">This week's grant matches for your organisation</div>
-    </div>
-    <div class="mb-total">
-      <div class="mb-total-num">$245k</div>
-      <div class="mb-total-lbl">total available this week</div>
-    </div>
+    <div class="mb-label">This week's grant matches for your organisation</div>
+    <div class="mb-total"><div class="mb-total-num">$245k</div><div class="mb-total-lbl">total available this week</div></div>
   </div>
   <div class="mb-grid">
     <div class="mb-card top-match">
-      <div class="mb-card-head">
-        <span class="mb-badge">94% match</span>
-        <span class="mb-amt">$75,000</span>
-      </div>
+      <div class="mb-card-head"><span class="mb-badge">94% match</span><span class="mb-amt">$75,000</span></div>
       <div class="mb-name">Community Development Fund</div>
-      <div class="mb-meta">
-        <span class="mb-tag">Dept. of Social Services</span>
-        <span class="mb-tag">Round 4 open</span>
-        <span class="mb-tag">Government</span>
-      </div>
-      <div class="mb-footer">
-        <span class="mb-deadline">Closes 15 Aug 2025</span>
-        <button class="mb-action" onclick="toast('Opening Community Development Fund…')">Start applying →</button>
-      </div>
+      <div class="mb-meta"><span class="mb-tag">Dept. of Social Services</span><span class="mb-tag">Round 4 open</span><span class="mb-tag">Government</span></div>
+      <div class="mb-footer"><span class="mb-deadline">Closes 15 Aug 2025</span><button class="mb-action" onclick="showToast('Opening Community Development Fund…')">Start applying →</button></div>
     </div>
     <div class="mb-card">
-      <div class="mb-card-head">
-        <span class="mb-badge">82% match</span>
-        <span class="mb-amt">$120,000</span>
-      </div>
+      <div class="mb-card-head"><span class="mb-badge">82% match</span><span class="mb-amt">$120,000</span></div>
       <div class="mb-name">R&amp;D Innovation Grant</div>
-      <div class="mb-meta">
-        <span class="mb-tag">ATO Incentive</span>
-        <span class="mb-tag">AusIndustry</span>
-        <span class="mb-tag">R&amp;D</span>
-      </div>
-      <div class="mb-footer">
-        <span class="mb-deadline">Closes 30 Jun 2025</span>
-        <button class="mb-action" onclick="toast('Opening R&D Innovation Grant…')">Start applying →</button>
-      </div>
+      <div class="mb-meta"><span class="mb-tag">ATO Incentive</span><span class="mb-tag">AusIndustry</span><span class="mb-tag">R&amp;D</span></div>
+      <div class="mb-footer"><span class="mb-deadline">Closes 30 Jun 2025</span><button class="mb-action" onclick="showToast('Opening R&D Innovation Grant…')">Start applying →</button></div>
     </div>
     <div class="mb-card">
-      <div class="mb-card-head">
-        <span class="mb-badge">78% match</span>
-        <span class="mb-amt">$50,000</span>
-      </div>
+      <div class="mb-card-head"><span class="mb-badge">78% match</span><span class="mb-amt">$50,000</span></div>
       <div class="mb-name">Paul Ramsay Foundation</div>
-      <div class="mb-meta">
-        <span class="mb-tag">Philanthropic</span>
-        <span class="mb-tag">EOI round open</span>
-        <span class="mb-tag">Social impact</span>
-      </div>
-      <div class="mb-footer">
-        <span class="mb-deadline">EOI closes 1 Sep 2025</span>
-        <button class="mb-action" onclick="toast('Opening Paul Ramsay Foundation EOI…')">Start applying →</button>
-      </div>
+      <div class="mb-meta"><span class="mb-tag">Philanthropic</span><span class="mb-tag">EOI round open</span><span class="mb-tag">Social impact</span></div>
+      <div class="mb-footer"><span class="mb-deadline">EOI closes 1 Sep 2025</span><button class="mb-action" onclick="showToast('Opening Paul Ramsay Foundation EOI…')">Start applying →</button></div>
     </div>
   </div>
   <div class="mb-bottom">
@@ -371,34 +295,22 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
   </div>
 </div>
 
-<!-- BENTO GRID -->
+<!-- BENTO -->
 <div class="bento" id="bento">
   <div class="bento-inner">
     <div class="section-eyebrow">The GrantPilot advantage</div>
     <div class="section-h">Everything your organisation needs to win funding — in one place.</div>
     <div class="bento-grid">
-
-      <!-- B1: Time comparison -->
       <div class="b-card b1">
         <div class="card-tag">Time savings</div>
         <h3>From 80 hours to 2–3. Without compromising quality.</h3>
         <p>Leaders don't need to be grant writing experts. They just need 15-minute bursts to share their vision.</p>
         <div class="comparison-mini">
-          <div class="cm-row">
-            <div class="cm-lbl">Manual</div>
-            <div class="cm-bar-wrap"><div class="cm-fill m" id="cm-m"></div></div>
-            <div class="cm-val">20–80h</div>
-          </div>
-          <div class="cm-row">
-            <div class="cm-lbl">GrantPilot</div>
-            <div class="cm-bar-wrap"><div class="cm-fill g" id="cm-g"></div></div>
-            <div class="cm-val" style="color:var(--blue)">2–3h</div>
-          </div>
+          <div class="cm-row"><div class="cm-lbl">Manual</div><div class="cm-bar-wrap"><div class="cm-fill m" id="bar-m"></div></div><div class="cm-val">20–80h</div></div>
+          <div class="cm-row"><div class="cm-lbl">GrantPilot</div><div class="cm-bar-wrap"><div class="cm-fill g" id="bar-g"></div></div><div class="cm-val" style="color:var(--blue)">2–3h</div></div>
         </div>
         <div class="big-label">80</div>
       </div>
-
-      <!-- B2: How it works -->
       <div class="b-card b2">
         <div class="card-tag">5-stage workflow</div>
         <h3>From your documents to a submission-ready draft.</h3>
@@ -410,42 +322,21 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
           <div class="sl-item"><div class="sl-num">5</div><div class="sl-text"><span class="sl-strong">Export and submit</span>Word, PDF, or SmartyGrants-ready. Formatted, compliant, done.</div></div>
         </div>
       </div>
-
-      <!-- B3: Government -->
       <div class="b-card b3">
         <div class="card-tag">Government grants</div>
         <h3>Federal, state &amp; local funding streams covered.</h3>
-        <div class="tag-cloud">
-          <span class="tc-tag">DSS Community</span>
-          <span class="tc-tag">State Govt</span>
-          <span class="tc-tag">NDIS</span>
-          <span class="tc-tag">Local Council</span>
-        </div>
+        <div class="tag-cloud"><span class="tc-tag">DSS Community</span><span class="tc-tag">State Govt</span><span class="tc-tag">NDIS</span><span class="tc-tag">Local Council</span></div>
       </div>
-
-      <!-- B4: R&D -->
       <div class="b-card b4">
         <div class="card-tag">R&amp;D &amp; innovation</div>
         <h3>ATO R&amp;D Incentive &amp; AusIndustry aligned.</h3>
-        <div class="tag-cloud">
-          <span class="tc-tag">R&amp;D Tax Incentive</span>
-          <span class="tc-tag">Innovation Fund</span>
-          <span class="tc-tag">AusIndustry</span>
-        </div>
+        <div class="tag-cloud"><span class="tc-tag">R&amp;D Tax Incentive</span><span class="tc-tag">Innovation Fund</span><span class="tc-tag">AusIndustry</span></div>
       </div>
-
-      <!-- B5: Philanthropic -->
       <div class="b-card b5">
         <div class="card-tag">Philanthropic</div>
         <h3>Major Australian foundations matched to your mission.</h3>
-        <div class="tag-cloud">
-          <span class="tc-tag">Paul Ramsay</span>
-          <span class="tc-tag">Minderoo</span>
-          <span class="tc-tag">Ian Potter</span>
-        </div>
+        <div class="tag-cloud"><span class="tc-tag">Paul Ramsay</span><span class="tc-tag">Minderoo</span><span class="tc-tag">Ian Potter</span></div>
       </div>
-
-      <!-- B6: Compliance — dark -->
       <div class="b-card b6">
         <div class="card-tag inv">Compliance engine</div>
         <h3>Built-in ACNC &amp; DGR validation. Zero compliance surprises.</h3>
@@ -456,14 +347,11 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
           <div class="sl-item dark-item"><div class="sl-num">✓</div><div class="sl-text"><span class="sl-strong">Budget schema matches funder requirements</span></div></div>
         </div>
       </div>
-
-      <!-- B7: Data sovereignty -->
       <div class="b-card b7">
         <div class="card-tag">Security</div>
         <h3>AES-256 encrypted. Australian data sovereignty. Always.</h3>
         <p>Your documents are indexed and stored exclusively in AWS ap-southeast-2 (Sydney). They never leave Australia. ISO 27001-aligned security practices and annual third-party penetration testing.</p>
       </div>
-
     </div>
   </div>
 </div>
@@ -486,7 +374,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="#e8f0fe"/><path d="M4.5 7.5l2 2 4-4" stroke="#135bec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Eligibility overview per grant</li>
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="#e8f0fe"/><path d="M4.5 7.5l2 2 4-4" stroke="#135bec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Basic funding calendar</li>
         </ul>
-        <button class="plan-btn" onclick="toast('Starting your free account…')">Get started free</button>
+        <button class="plan-btn" onclick="showToast('Starting your free account…')">Get started free</button>
       </div>
       <div class="plan-card">
         <div class="plan-name">Apply</div>
@@ -499,7 +387,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="#e8f0fe"/><path d="M4.5 7.5l2 2 4-4" stroke="#135bec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Compliance validation</li>
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="#e8f0fe"/><path d="M4.5 7.5l2 2 4-4" stroke="#135bec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Word, PDF, SmartyGrants export</li>
         </ul>
-        <button class="plan-btn" onclick="toast('Taking you to Apply signup…')">Start applying</button>
+        <button class="plan-btn" onclick="showToast('Taking you to Apply signup…')">Start applying</button>
       </div>
       <div class="plan-card hot">
         <div class="hot-badge">Most popular</div>
@@ -514,7 +402,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="rgba(255,255,255,.15)"/><path d="M4.5 7.5l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Full compliance engine</li>
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="rgba(255,255,255,.15)"/><path d="M4.5 7.5l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Funding pipeline dashboard</li>
         </ul>
-        <button class="hot-btn" onclick="toast('Starting your Growth trial…')">Start free trial</button>
+        <button class="hot-btn" onclick="showToast('Starting your Growth trial…')">Start free trial</button>
       </div>
       <div class="plan-card">
         <div class="plan-name">Enterprise</div>
@@ -528,7 +416,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="#e8f0fe"/><path d="M4.5 7.5l2 2 4-4" stroke="#135bec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>SLA support</li>
           <li><svg class="chk" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="7.5" fill="#e8f0fe"/><path d="M4.5 7.5l2 2 4-4" stroke="#135bec" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Custom compliance frameworks</li>
         </ul>
-        <button class="plan-btn" onclick="toast('Connecting you with sales…')">Contact sales</button>
+        <button class="plan-btn" onclick="showToast('Connecting you with sales…')">Contact sales</button>
       </div>
     </div>
   </div>
@@ -549,9 +437,9 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     <button class="btn-blue-lg" onclick="sub('cta-email')">Download free checklist</button>
     <p class="cta-note">No spam. Unsubscribe anytime.</p>
     <div class="checklist-box">
-      <div class="cl-row"><div class="cl-circle done"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4"/></svg></div>ACNC registration current and active</div>
-      <div class="cl-row"><div class="cl-circle done"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4"/></svg></div>DGR endorsement documented</div>
-      <div class="cl-row"><div class="cl-circle done"><svg viewBox="0 0 10 10"><path d="M2 5l2 2 4-4"/></svg></div>Impact data from last 3 annual reports</div>
+      <div class="cl-row"><div class="cl-circle done"><svg class="cl-check" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4"/></svg></div>ACNC registration current and active</div>
+      <div class="cl-row"><div class="cl-circle done"><svg class="cl-check" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4"/></svg></div>DGR endorsement documented</div>
+      <div class="cl-row"><div class="cl-circle done"><svg class="cl-check" viewBox="0 0 10 10"><path d="M2 5l2 2 4-4"/></svg></div>Impact data from last 3 annual reports</div>
       <div class="cl-row"><div class="cl-circle"></div>Budget aligned to funder template schema</div>
       <div class="cl-row"><div class="cl-circle"></div>Selection criteria mapped to evidence</div>
       <div class="cl-row"><div class="cl-circle"></div>Governance documentation attached</div>
@@ -566,73 +454,92 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="foot-logo">Grant<span>Pilot</span></div>
       <p class="foot-tagline">"We find the funding. You tell the story. We write the application."</p>
     </div>
-    <div class="foot-col">
-      <h5>Platform</h5>
-      <a href="#bento">Why GrantPilot</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#cta">Resources</a>
-    </div>
-    <div class="foot-col">
-      <h5>Grant types</h5>
-      <a href="#">Government grants</a>
-      <a href="#">R&amp;D incentives</a>
-      <a href="#">Philanthropic</a>
-      <a href="#">SmartyGrants</a>
-    </div>
-    <div class="foot-col">
-      <h5>Company</h5>
-      <a href="#">About</a>
-      <a href="#">Contact support</a>
-      <a href="#">Privacy policy</a>
-      <a href="#">Terms of service</a>
-    </div>
+    <div class="foot-col"><h5>Platform</h5><a href="#bento">Why GrantPilot</a><a href="#pricing">Pricing</a><a href="#cta">Resources</a></div>
+    <div class="foot-col"><h5>Grant types</h5><a href="#">Government grants</a><a href="#">R&amp;D incentives</a><a href="#">Philanthropic</a><a href="#">SmartyGrants</a></div>
+    <div class="foot-col"><h5>Company</h5><a href="#">About</a><a href="#">Contact support</a><a href="#">Privacy policy</a><a href="#">Terms of service</a></div>
   </div>
   <div class="foot-bottom">
     <p>&copy; 2025 GrantPilot Pty Ltd · ABN 00 000 000 000</p>
-    <div class="foot-legal">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Contact</a>
-    </div>
+    <div class="foot-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></div>
   </div>
 </footer>
 
 <div class="toast" id="toast"><span class="t-dot"></span><span id="tmsg"></span></div>
 
 <script>
-function toast(msg){
-  var el=document.getElementById('toast');
-  document.getElementById('tmsg').textContent=msg;
-  el.classList.add('show');
-  setTimeout(function(){el.classList.remove('show')},3800);
-}
-function sub(id){
-  var el=document.getElementById(id);
-  var v=el?el.value.trim():'';
-  if(!v||!v.includes('@')){
-    if(el){el.style.borderColor='rgba(239,100,100,.6)';setTimeout(function(){el.style.borderColor='';},2000)}
-    return;
+(function(){
+  function showToast(msg){
+    var el=document.getElementById('toast');
+    document.getElementById('tmsg').textContent=msg;
+    el.classList.add('show');
+    setTimeout(function(){el.classList.remove('show');},3800);
   }
-  toast('You\'re in! Check your inbox for your first match email.');
-  if(el)el.value='';
-}
+  window.showToast=showToast;
 
-var tags=['35,000+ Australian NFPs','Government grants','R&D tax incentives','Innovation funds','Philanthropic trusts','ACNC compliant','SmartyGrants export','Weekly grant digest','AI voice input','2–3 hour turnaround','94% match accuracy','Australian data sovereignty'];
-var html='';
-[...tags,...tags].forEach(function(s){html+='<span class="marquee-item">'+s+'</span>';});
-document.getElementById('mtrack').innerHTML=html;
+  function sub(id){
+    var el=document.getElementById(id);
+    if(!el)return;
+    var v=el.value.trim();
+    if(!v||v.indexOf('@')<0){
+      el.style.borderColor='rgba(239,100,100,.6)';
+      setTimeout(function(){el.style.borderColor='';},2000);
+      return;
+    }
+    showToast('You\'re in! Check your inbox for your first match email.');
+    el.value='';
+  }
+  window.sub=sub;
 
-var done=false;
-function animBars(){
-  if(done)return;done=true;
-  setTimeout(function(){
-    var g=document.getElementById('cm-g');
-    if(g)g.style.width='7%';
-  },200);
-}
-var obs=new IntersectionObserver(function(e){if(e[0].isIntersecting)animBars();},{threshold:.2});
-var bc=document.querySelector('.b1');
-if(bc)obs.observe(bc);
+  var tags=['35,000+ Australian NFPs','Government grants','R&D tax incentives','Innovation funds','Philanthropic trusts','ACNC compliant','SmartyGrants export','Weekly grant digest','AI voice input','2–3 hour turnaround','94% match accuracy','Australian data sovereignty'];
+  var html='';
+  tags.concat(tags).forEach(function(s){html+='<span class="marquee-item">'+s+'</span>';});
+  document.getElementById('mtrack').innerHTML=html;
+
+  var nav=document.getElementById('navbar');
+  function onScroll(){
+    if((window.scrollY||document.documentElement.scrollTop)>40){
+      nav.classList.add('scrolled');
+    }else{
+      nav.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  var barsAnimated=false;
+  function animateBars(){
+    if(barsAnimated)return;
+    barsAnimated=true;
+    var bm=document.getElementById('bar-m');
+    var bg=document.getElementById('bar-g');
+    if(bm)bm.style.width='100%';
+    if(bg)setTimeout(function(){bg.style.width='7%';},100);
+  }
+  var barTarget=document.querySelector('.b1');
+  if(barTarget&&window.IntersectionObserver){
+    new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting)animateBars();
+    },{threshold:.3}).observe(barTarget);
+  }
+
+  var phrases=['Skip the 80 hours.','Save 40 Hours Writing.','Expert Quality, Low Cost.','Make it Work.'];
+  var lineEl=document.getElementById('hero-line3');
+  var idx=0;
+  lineEl.style.transition='opacity .5s ease, transform .5s ease';
+  lineEl.style.opacity='1';
+  lineEl.style.transform='translateY(0)';
+
+  function rotateLine(){
+    idx=(idx+1)%phrases.length;
+    lineEl.style.opacity='0';
+    lineEl.style.transform='translateY(12px)';
+    setTimeout(function(){
+      lineEl.textContent=phrases[idx];
+      lineEl.style.opacity='1';
+      lineEl.style.transform='translateY(0)';
+    },500);
+  }
+  setInterval(rotateLine,5000);
+})();
 </script>
 </body>
 </html>
