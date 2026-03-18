@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FundingScribe — Brand Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#236cff;--blue2:#1a55d4;--blue3:#e8f0fe;--sky:#00bdff;
+  --ink:#1a1a2a;--muted:#6c6c84;--border:#e8e8f2;
+  --off:#f7f7fc;--frost:#f0f5ff;--white:#fff;
+  --grad:linear-gradient(135deg,#236cff 0%,#00bdff 100%);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--off);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* ── LAYOUT ── */
+.page{max-width:960px;margin:0 auto;padding:0 40px 100px}
+
+/* ── COVER ── */
+.cover{background:var(--white);border-bottom:1px solid var(--border);position:relative;overflow:hidden;padding:0 40px}
+.cover-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(35,108,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(35,108,255,.05) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.cover-glow{position:absolute;width:700px;height:500px;background:radial-gradient(ellipse,rgba(35,108,255,.07) 0%,transparent 70%);top:-100px;right:-120px;pointer-events:none}
+.cover-inner{position:relative;z-index:1;max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;padding:80px 0 72px}
+.cover-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:28px}
+.cover-dot{width:5px;height:5px;background:var(--blue);border-radius:50%}
+.cover-title{font-size:clamp(56px,8vw,96px);font-weight:900;letter-spacing:-4px;line-height:.93;margin-bottom:28px}
+.cover-title .w1{color:var(--ink)}
+.cover-title .w2{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cover-desc{font-size:15px;color:var(--muted);font-weight:400;line-height:1.75;max-width:400px;margin-bottom:40px}
+.cover-meta{display:flex;flex-direction:column;gap:16px}
+.cm-item{display:flex;flex-direction:column;gap:3px}
+.cm-label{font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#bbbbd0}
+.cm-val{font-size:13px;font-weight:500;color:var(--ink)}
+.cover-right{display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;gap:12px;align-self:flex-end;padding-bottom:4px}
+.cover-version{background:var(--blue3);color:var(--blue);font-size:11px;font-weight:700;letter-spacing:.8px;padding:5px 14px;border-radius:50px}
+.cover-year{font-size:11px;color:#bbbbd0;font-weight:500}
+.cover-stripe{height:4px;background:var(--grad);width:100%}
+
+/* ── TOC ── */
+.toc{background:var(--white);border-bottom:1px solid var(--border);padding:20px 40px}
+.toc-inner{max-width:960px;margin:0 auto;display:flex;gap:6px;flex-wrap:wrap}
+.toc-item{font-size:11px;font-weight:600;color:var(--muted);padding:5px 14px;border-radius:50px;background:var(--off);border:1px solid var(--border);text-decoration:none;transition:.15s}
+.toc-item:hover{background:var(--blue3);color:var(--blue);border-color:rgba(35,108,255,.2)}
+.toc-num{color:#bbbbd0;margin-right:4px}
+
+/* ── SECTION ── */
+.section{padding-top:64px;margin-bottom:8px}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.sh-num{font-size:11px;font-weight:700;color:#bbbbd0;letter-spacing:1px;min-width:20px}
+.sh-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.sh-line{flex:1;height:1px;background:var(--border)}
+
+/* ── CARDS ── */
+.card{background:var(--white);border:1px solid var(--border);border-radius:18px;padding:24px 28px}
+.card + .card{margin-top:10px}
+.card-label{font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#bbbbd0;margin-bottom:12px}
+.card-body{font-size:13px;color:var(--muted);line-height:1.8}
+code{font-size:11px;font-family:monospace;background:var(--off);border:1px solid var(--border);padding:2px 6px;border-radius:5px;color:var(--blue)}
+
+/* ── GRIDS ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+
+/* ── LOGO ── */
+.logo-surface{border-radius:14px;height:96px;display:flex;align-items:center;justify-content:center}
+.logo-light{background:var(--frost);border:1px solid var(--border)}
+.logo-dark{background:var(--ink)}
+.logo-text{font-size:26px;font-weight:900;letter-spacing:-.4px}
+.logo-text.on-light{color:var(--ink)}
+.logo-text.on-light span,.logo-text.on-dark span{color:var(--blue)}
+.logo-text.on-dark{color:#fff}
+.logo-note{font-size:11px;color:#bbbbd0;margin-top:7px}
+
+/* ── SWATCHES ── */
+.swatch-block{border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+.swatch-color{height:68px;width:100%}
+.swatch-info{padding:11px 13px;background:var(--white)}
+.swatch-name{font-size:12px;font-weight:600;color:var(--ink);margin-bottom:2px}
+.swatch-hex{font-size:11px;font-family:monospace;color:var(--muted)}
+.swatch-role{font-size:10px;color:#bbbbd0;margin-top:3px;line-height:1.5}
+
+/* ── GRADIENTS ── */
+.grad-bar{height:34px;border-radius:9px;margin-bottom:10px}
+.grad-main{background:linear-gradient(135deg,#236cff 0%,#00bdff 100%)}
+.grad-hot{background:linear-gradient(135deg,#236cff,#00bdff,#236cff)}
+
+/* ── TYPE ── */
+.type-row{padding:18px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:24px}
+.type-row:last-child{border-bottom:none}
+.type-meta{font-size:10px;font-family:monospace;color:#bbbbd0;line-height:1.8;width:155px;flex-shrink:0}
+.t-hero{font-size:34px;font-weight:800;letter-spacing:-1.5px;line-height:1;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.t-sub{font-size:26px;font-weight:700;letter-spacing:-2px;color:var(--ink)}
+.t-h2{font-size:21px;font-weight:600;letter-spacing:-1px;color:var(--ink)}
+.t-h3{font-size:17px;font-weight:600;letter-spacing:-.3px;color:var(--ink)}
+.t-body{font-size:14px;color:var(--muted);line-height:1.75;font-weight:400}
+.t-eyebrow{font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue)}
+
+/* ── COMPONENTS ── */
+.btn-primary{background:var(--blue);color:#fff;border:none;border-radius:50px;padding:10px 22px;font-size:13px;font-weight:700;cursor:default;font-family:'Inter',sans-serif}
+.btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border);border-radius:50px;padding:10px 22px;font-size:13px;font-weight:600;cursor:default;font-family:'Inter',sans-serif}
+.btn-card{background:var(--blue);color:#fff;border:none;border-radius:11px;padding:12px;font-size:13px;font-weight:700;cursor:default;width:100%;font-family:'Inter',sans-serif}
+.btn-white{background:#fff;color:var(--blue);border:none;border-radius:9px;padding:8px 18px;font-size:12px;font-weight:800;cursor:default;font-family:'Inter',sans-serif}
+.tag-chip{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--blue);background:var(--blue3);padding:4px 12px;border-radius:50px;display:inline-block}
+.pill-demo{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid var(--border);color:var(--blue);font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:5px 14px;border-radius:50px}
+.pill-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0}
+.nav-demo{background:var(--frost);height:52px;border-radius:12px;display:flex;align-items:center;padding:0 18px;justify-content:space-between;border:1px solid var(--border)}
+.nav-logo{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.3px}
+.nav-logo span{color:var(--blue)}
+.nav-links-d{display:flex;gap:4px}
+.nav-link-d{font-size:12px;font-weight:500;color:var(--muted);padding:5px 10px;border-radius:6px}
+.nav-cta-d{background:var(--blue);color:#fff;border-radius:50px;padding:7px 16px;font-size:12px;font-weight:700}
+.email-form-demo{display:flex;background:rgba(255,255,255,.9);border:1.5px solid rgba(35,108,255,.18);border-radius:13px;padding:5px;gap:6px;max-width:400px}
+.email-form-demo input{flex:1;background:none;border:none;outline:none;font-family:'Inter',sans-serif;font-size:13px;color:var(--ink);padding:7px 10px}
+.email-form-demo input::placeholder{color:#c0c0d0}
+.marquee-demo-bar{background:#3e3e3e;border-radius:9px;padding:9px 16px;display:flex;overflow:hidden;flex-wrap:nowrap}
+.mq-tag{font-size:10px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.55);white-space:nowrap;border-right:1px solid rgba(255,255,255,.12);padding:0 18px}
+.mq-tag:last-child{border-right:none}
+.hot-card-demo{background:linear-gradient(135deg,#236cff,#00bdff,#236cff);background-size:300% 300%;border-radius:14px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hot-badge-d{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.2);color:#fff;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 11px;border-radius:50px;margin-bottom:10px}
+.hot-cyan-dot{width:4px;height:4px;background:#00fff5;border-radius:50%;flex-shrink:0}
+
+/* ── PLAN CARDS ── */
+.plan-demo-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-items:center}
+.plan-card-d{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:18px 14px;display:flex;flex-direction:column}
+.plan-card-d.featured{background:linear-gradient(135deg,#236cff,#00bdff,#236cff);background-size:300% 300%;border-color:transparent;transform:translateY(-10px);box-shadow:0 16px 48px rgba(35,108,255,.25)}
+.plan-list-d{list-style:none;display:flex;flex-direction:column;gap:7px;flex:1;margin-bottom:14px}
+.plan-list-d li{font-size:11px;color:var(--muted);display:flex;gap:6px;align-items:flex-start;line-height:1.4}
+.plan-list-d li.wh{color:rgba(255,255,255,.85)}
+.chk-d{width:13px;height:13px;flex-shrink:0;margin-top:1px}
+
+/* ── SPACING ── */
+.spacing-row{display:flex;align-items:center;gap:14px;margin-bottom:9px}
+.sp-bar{background:var(--blue);height:5px;border-radius:3px;opacity:.2}
+.sp-val{font-size:11px;font-family:monospace;color:#bbbbd0;min-width:54px}
+.sp-use{font-size:12px;color:var(--muted)}
+
+/* ── RADIUS ── */
+.radius-grid{display:flex;gap:18px;flex-wrap:wrap}
+.radius-item{text-align:center}
+.radius-box{width:42px;height:42px;background:var(--blue3);border:1px solid rgba(35,108,255,.15);margin:0 auto 7px}
+.radius-label{font-size:10px;color:#bbbbd0;line-height:1.6}
+
+/* ── VOICE ── */
+.voice-card{background:var(--white);border:1px solid var(--border);border-radius:13px;padding:18px}
+.voice-attr{font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);margin-bottom:7px}
+.voice-eg{font-size:13px;color:var(--muted);line-height:1.7;font-style:italic;font-weight:400}
+
+/* ── RULES ── */
+.rule-item{display:flex;gap:11px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border)}
+.rule-item:last-child{border-bottom:none}
+.rule-icon{width:18px;height:18px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:3px;font-weight:700}
+.rule-do .rule-icon{background:rgba(34,197,94,.1);color:#16a34a}
+.rule-dont .rule-icon{background:rgba(239,68,68,.08);color:#dc2626}
+.rule-text{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── MOTION ── */
+.motion-row{display:flex;gap:16px;padding:13px 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.motion-row:last-child{border-bottom:none}
+.motion-name{font-size:12px;font-weight:600;color:var(--ink);width:176px;flex-shrink:0}
+.motion-spec{font-size:12px;color:var(--muted);line-height:1.7;flex:1}
+
+/* ── ACCENT BAND ── */
+.band{background:var(--ink);margin:64px -40px 0;padding:22px 40px;display:flex;align-items:center;gap:0;overflow:hidden}
+.band-item{display:flex;align-items:center;gap:20px;flex:1}
+.band-text{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);white-space:nowrap}
+.band-dot{width:3px;height:3px;background:rgba(255,255,255,.15);border-radius:50%;flex-shrink:0}
+
+/* ── FOOTER ── */
+.guide-footer{border-top:1px solid var(--border);padding-top:36px;margin-top:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot-logo{font-size:15px;font-weight:900;color:var(--ink);letter-spacing:-.3px}
+.foot-logo span{color:var(--blue)}
+.guide-footer p{font-size:11px;color:#bbbbd0}
+
+@media(max-width:700px){
+  .page,.cover,.toc{padding-left:24px;padding-right:24px}
+  .cover-inner{grid-template-columns:1fr;gap:32px}
+  .cover-right{align-items:flex-start;flex-direction:row}
+  .cover-title{font-size:clamp(48px,12vw,72px);letter-spacing:-3px}
+  .g2,.g3,.g4{grid-template-columns:1fr 1fr}
+  .plan-demo-wrap{grid-template-columns:1fr 1fr}
+  .plan-card-d.featured{transform:none}
+  .type-row{flex-direction:column;align-items:flex-start;gap:6px}
+  .type-meta{width:100%}
+  .band{margin:64px -24px 0;padding:20px 24px}
+}
+@media(max-width:480px){
+  .g3,.g4,.plan-demo-wrap{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ COVER ══ -->
+<div class="cover">
+  <div class="cover-grid"></div>
+  <div class="cover-glow"></div>
+  <div class="cover-inner">
+    <div>
+      <div class="cover-eyebrow"><span class="cover-dot"></span>Brand identity system</div>
+      <div class="cover-title">
+        <div class="w1">Funding</div>
+        <div class="w2">Scribe.</div>
+      </div>
+      <p class="cover-desc">Design language, components & usage rules extracted from production source.</p>
+      <div class="cover-meta">
+        <div class="cm-item"><span class="cm-label">Typefaces</span><span class="cm-val">Momo Trust Display · Momo Trust Sans</span></div>
+        <div class="cm-item"><span class="cm-label">Primary colour</span><span class="cm-val">#236cff — Brand Blue</span></div>
+        <div class="cm-item"><span class="cm-label">Jurisdiction</span><span class="cm-val">Australian — ACNC · DGR · NFP</span></div>
+      </div>
+    </div>
+    <div class="cover-right">
+      <span class="cover-version">v1.0</span>
+      <span class="cover-year">2025</span>
+    </div>
+  </div>
+  <div class="cover-stripe"></div>
+</div>
+
+<!-- ══ TOC ══ -->
+<div class="toc">
+  <div class="toc-inner">
+    <a href="#s01" class="toc-item"><span class="toc-num">01</span>Logotype</a>
+    <a href="#s02" class="toc-item"><span class="toc-num">02</span>Colour</a>
+    <a href="#s03" class="toc-item"><span class="toc-num">03</span>Typography</a>
+    <a href="#s04" class="toc-item"><span class="toc-num">04</span>Components</a>
+    <a href="#s05" class="toc-item"><span class="toc-num">05</span>Spacing</a>
+    <a href="#s06" class="toc-item"><span class="toc-num">06</span>Tone of voice</a>
+    <a href="#s07" class="toc-item"><span class="toc-num">07</span>Brand rules</a>
+    <a href="#s08" class="toc-item"><span class="toc-num">08</span>Motion</a>
+  </div>
+</div>
+
+<div class="page">
+
+<!-- ══ 01 LOGOTYPE ══ -->
+<div class="section" id="s01">
+  <div class="section-header"><span class="sh-num">01</span><div class="sh-line"></div><span class="sh-title">Logotype</span></div>
+  <div class="g2" style="margin-bottom:12px">
+    <div>
+      <div class="logo-surface logo-light"><span class="logo-text on-light">Funding<span>Scribe</span></span></div>
+      <p class="logo-note">Default — on light surface</p>
+    </div>
+    <div>
+      <div class="logo-surface logo-dark"><span class="logo-text on-dark">Funding<span>Scribe</span></span></div>
+      <p class="logo-note">Reversed — on dark surface</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-label">Construction rules</div>
+    <p class="card-body">Set in <strong style="color:var(--ink);font-weight:600">Momo Trust Sans</strong> weight 800–900. "Funding" renders in the surface-appropriate ink colour. "Scribe" is always <code>#236cff</code> — never any other colour. Letter-spacing <code>-0.4px</code>. Do not use Display weight for the wordmark. Never rotate, skew, recolour, or separate the two words.</p>
+  </div>
+</div>
+
+<!-- ══ BAND ══ -->
+<div class="band">
+  <div class="band-item"><span class="band-text">Colour palette</span><span class="band-dot"></span></div>
+  <div class="band-item"><span class="band-text">Typography</span><span class="band-dot"></span></div>
+  <div class="band-item"><span class="band-text">Components</span><span class="band-dot"></span></div>
+  <div class="band-item"><span class="band-text">Spacing & layout</span><span class="band-dot"></span></div>
+  <div class="band-item"><span class="band-text">Tone of voice</span><span class="band-dot"></span></div>
+  <div class="band-item"><span class="band-text">Motion</span></div>
+</div>
+
+<!-- ══ 02 COLOUR ══ -->
+<div class="section" id="s02">
+  <div class="section-header"><span class="sh-num">02</span><div class="sh-line"></div><span class="sh-title">Colour palette</span></div>
+
+  <p style="font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#bbbbd0;margin-bottom:10px">Brand blues</p>
+  <div class="g4" style="margin-bottom:12px">
+    <div class="swatch-block"><div class="swatch-color" style="background:#236cff"></div><div class="swatch-info"><div class="swatch-name">Brand Blue</div><div class="swatch-hex">#236cff</div><div class="swatch-role">CTAs, links, accents, "Scribe"</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#1a55d4"></div><div class="swatch-info"><div class="swatch-name">Blue Hover</div><div class="swatch-hex">#1a55d4</div><div class="swatch-role">Hover & active states</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#e8f0fe"></div><div class="swatch-info"><div class="swatch-name">Blue Tint</div><div class="swatch-hex">#e8f0fe</div><div class="swatch-role">Tag & chip backgrounds</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#00bdff"></div><div class="swatch-info"><div class="swatch-name">Sky Blue</div><div class="swatch-hex">#00bdff</div><div class="swatch-role">Gradient endpoint only</div></div></div>
+  </div>
+
+  <p style="font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#bbbbd0;margin-bottom:10px">Neutrals</p>
+  <div class="g4" style="margin-bottom:12px">
+    <div class="swatch-block"><div class="swatch-color" style="background:#3e3e3e"></div><div class="swatch-info"><div class="swatch-name">Ink</div><div class="swatch-hex">#3e3e3e</div><div class="swatch-role">Body text on light surfaces</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#1a1a2a"></div><div class="swatch-info"><div class="swatch-name">Deep Ink</div><div class="swatch-hex">#1a1a2a</div><div class="swatch-role">Footer, dark page sections</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#333333"></div><div class="swatch-info"><div class="swatch-name">Charcoal</div><div class="swatch-hex">#333333</div><div class="swatch-role">CTA banner background</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#6c6c84"></div><div class="swatch-info"><div class="swatch-name">Muted</div><div class="swatch-hex">#6c6c84</div><div class="swatch-role">Supporting text, nav links</div></div></div>
+  </div>
+
+  <p style="font-size:9px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#bbbbd0;margin-bottom:10px">Backgrounds & borders</p>
+  <div class="g4" style="margin-bottom:24px">
+    <div class="swatch-block"><div class="swatch-color" style="background:#ffffff;border-bottom:1px solid #e8e8f2"></div><div class="swatch-info"><div class="swatch-name">White</div><div class="swatch-hex">#ffffff</div><div class="swatch-role">Card surfaces, inputs</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#f7f7fc"></div><div class="swatch-info"><div class="swatch-name">Off-white</div><div class="swatch-hex">#f6f6fb</div><div class="swatch-role">Bento sections, hover tints</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#f5f9ff"></div><div class="swatch-info"><div class="swatch-name">Frost</div><div class="swatch-hex">#f5f9ff</div><div class="swatch-role">Nav bar, hero background</div></div></div>
+    <div class="swatch-block"><div class="swatch-color" style="background:#e4e4ef"></div><div class="swatch-info"><div class="swatch-name">Border</div><div class="swatch-hex">#e4e4ef</div><div class="swatch-role">Dividers, card borders</div></div></div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-label">Brand gradient</div>
+      <div class="grad-bar grad-main"></div>
+      <p style="font-family:monospace;font-size:11px;color:var(--muted);margin-bottom:8px">linear-gradient(135deg, #236cff 0%, #00bdff 100%)</p>
+      <p class="card-body">Hero H1 and section heading accents. Applied via <code>-webkit-background-clip: text</code> for gradient text. Also used in the hero page background (to <code>#cce0fd</code>) and the 4px cover stripe.</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Animated gradient — featured plan only</div>
+      <div class="grad-bar grad-hot"></div>
+      <p style="font-family:monospace;font-size:11px;color:var(--muted);margin-bottom:8px">background-size: 300% 300% · hotgrad 6s ease ∞</p>
+      <p class="card-body">Reserved exclusively for the "Most Popular" pricing card. Do not reuse elsewhere. Accent badge dot uses <code>#00fff5</code> cyan.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 03 TYPOGRAPHY ══ -->
+<div class="section" id="s03">
+  <div class="section-header"><span class="sh-num">03</span><div class="sh-line"></div><span class="sh-title">Typography</span></div>
+  <div class="g2" style="margin-bottom:12px">
+    <div class="card">
+      <div class="card-label">Display typeface</div>
+      <p style="font-size:24px;font-weight:400;letter-spacing:-.5px;color:var(--ink);margin-bottom:6px">Momo Trust Display</p>
+      <p class="card-body">Headings, hero copy, large numerals. Weight 400 (only weight used for Display).</p>
+    </div>
+    <div class="card">
+      <div class="card-label">Sans typeface</div>
+      <p style="font-size:21px;font-weight:400;color:var(--ink);margin-bottom:6px">Momo Trust Sans</p>
+      <p class="card-body">Body, UI labels, buttons, nav, footer. Weights in use: 400 500 600 700 800 900.</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="type-row">
+      <div class="type-meta">Hero H1<br>clamp(52–88px)<br>wt 400 · tracking -1px<br>gradient text</div>
+      <span class="t-hero">Win the funding.</span>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Hero subtitle<br>clamp(44–76px)<br>wt 400 · tracking -3px<br>color #3e3e3e</div>
+      <span class="t-sub">Skip the 80 hours.</span>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Section H2<br>clamp(28–44px)<br>wt 400 · tracking -2px</div>
+      <span class="t-h2">Grant writing, re-invented.</span>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Card H3<br>18px / wt 500<br>tracking -0.4px</div>
+      <span class="t-h3">Built-in ACNC & DGR validation.</span>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Body<br>17px hero · 15px section<br>13px cards · wt 400<br>line-height 1.75</div>
+      <span class="t-body">Transform your organisation's existing documents into submission-ready grant applications in a fraction of the time.</span>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Eyebrow<br>11px / wt 700<br>tracking 1.2–1.4px<br>UPPERCASE · #236cff</div>
+      <span class="t-eyebrow">The FundingScribe advantage</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 04 COMPONENTS ══ -->
+<div class="section" id="s04">
+  <div class="section-header"><span class="sh-num">04</span><div class="sh-line"></div><span class="sh-title">UI components</span></div>
+
+  <div class="card" style="margin-bottom:10px">
+    <div class="card-label">Navigation bar</div>
+    <div class="nav-demo" style="margin-bottom:14px">
+      <span class="nav-logo">Funding<span>Scribe</span></span>
+      <div class="nav-links-d"><span class="nav-link-d">Why FundingScribe</span><span class="nav-link-d">Pricing</span><span class="nav-link-d">Contact</span></div>
+      <span class="nav-cta-d">Join the pilot</span>
+    </div>
+    <p class="card-body">Sticky, <code>z-index: 200</code>, height 64px. Background <code>#f5f9ff</code>. Scroll >40px: frosted glass <code>rgba(245,249,255,.7)</code> + <code>backdrop-filter: blur(16px)</code> + bottom border. CTA uses pill button (radius 50px). Transition <code>.35s</code>.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <div class="card-label">Buttons</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;align-items:center">
+      <button class="btn-primary">Get started</button>
+      <button class="btn-outline">See features</button>
+      <button class="btn-card" style="width:auto;border-radius:10px">Send message</button>
+      <button class="btn-white" style="background:var(--ink);color:#fff">Dark CTA</button>
+    </div>
+    <p class="card-body"><strong style="color:var(--ink);font-weight:600">Pill CTA:</strong> radius 50px · bg <code>#236cff</code> → <code>#1a55d4</code> hover · 13px/700.<br>
+    <strong style="color:var(--ink);font-weight:600">Card button:</strong> radius 12px · full-width · same colours.<br>
+    <strong style="color:var(--ink);font-weight:600">Ghost button:</strong> transparent bg · <code>#e4e4ef</code> border · ink text. All transitions <code>.15s</code>.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <div class="card-label">Tags, chips & pill labels</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px">
+      <span class="tag-chip">Compliance engine</span>
+      <span class="tag-chip">5-stage workflow</span>
+      <span class="tag-chip">Security</span>
+      <div class="pill-demo"><span class="pill-dot"></span>Beachhead pilot — now open</div>
+    </div>
+    <p class="card-body"><strong style="color:var(--ink);font-weight:600">Card tag:</strong> 10px / wt 700 / tracking 0.8px / UPPERCASE / color <code>#236cff</code> / bg <code>#e8f0fe</code> / radius 50px.<br>
+    <strong style="color:var(--ink);font-weight:600">Pill label:</strong> white bg with border, animated pulsing blue dot via <code>box-shadow 1.8s ease-out infinite</code>.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <div class="card-label">Email capture form</div>
+    <div class="email-form-demo" style="margin-bottom:14px">
+      <input type="email" placeholder="your@organisation.org.au" readonly>
+      <button class="btn-primary" style="border-radius:9px;padding:10px 16px;font-size:12px">Get weekly matches</button>
+    </div>
+    <p class="card-body">Container: <code>rgba(255,255,255,.85)</code> · border <code>1.5px solid rgba(35,108,255,.15)</code> · radius 14px · padding 6px · gap 6px. Input transparent, no border. Mobile: text button replaced with a 42px circular send icon.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <div class="card-label">Marquee strip</div>
+    <div class="marquee-demo-bar" style="margin-bottom:14px">
+      <span class="mq-tag">35,000+ Australian NFPs</span>
+      <span class="mq-tag">Government grants</span>
+      <span class="mq-tag">R&D tax incentives</span>
+      <span class="mq-tag">ACNC compliant</span>
+      <span class="mq-tag">SmartyGrants export</span>
+      <span class="mq-tag">AI voice input</span>
+    </div>
+    <p class="card-body">Background <code>#3e3e3e</code> · height 42px. Text: 11px / wt 400 / tracking 1px / UPPERCASE / white. Divider <code>rgba(255,255,255,.2)</code> right border, padding 0 32px. Animation: <code>translateX(-50%)</code> 35s linear infinite.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:10px">
+    <div class="card-label">Featured plan card</div>
+    <div class="hot-card-demo" style="margin-bottom:14px">
+      <div>
+        <div class="hot-badge-d"><span class="hot-cyan-dot"></span>Most popular</div>
+        <div style="font-size:28px;font-weight:500;letter-spacing:-2px;color:#fff;line-height:1">$249<span style="font-size:12px;font-weight:400;color:rgba(255,255,255,.6)">/month</span></div>
+        <div style="font-size:15px;font-weight:600;color:#fff;margin-top:6px">Growth</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.7);margin-top:3px">Unlimited · AI voice · priority matching</div>
+      </div>
+      <button class="btn-white">Get started</button>
+    </div>
+    <p class="card-body">Animated gradient bg · elevated <code>translateY(-16px)</code> · shadow <code>0 24px 60px rgba(35,108,255,.35)</code>. All text white (body at 70% opacity). Badge bg <code>rgba(255,255,255,.18)</code>. Cyan dot <code>#00fff5</code>. White CTA.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-label">Pricing plan grid</div>
+    <div class="plan-demo-wrap" style="margin-bottom:14px">
+      <div class="plan-card-d">
+        <div style="font-size:24px;font-weight:500;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:4px">$0<span style="font-size:11px;font-weight:400;color:var(--muted)">/mo</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px">Starter</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px">Getting started.</div>
+        <div style="height:1px;background:var(--border);margin-bottom:12px"></div>
+        <ul class="plan-list-d">
+          <li><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="#e8f0fe"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#236cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Weekly top 3 matches</li>
+          <li><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="#e8f0fe"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#236cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Eligibility overview</li>
+        </ul>
+        <button class="btn-card" style="font-size:11px;padding:9px;border-radius:9px">Get started</button>
+      </div>
+      <div class="plan-card-d">
+        <div style="font-size:24px;font-weight:500;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:4px">$99<span style="font-size:11px;font-weight:400;color:var(--muted)">/app</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px">Apply</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px">Pay per application.</div>
+        <div style="height:1px;background:var(--border);margin-bottom:12px"></div>
+        <ul class="plan-list-d">
+          <li><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="#e8f0fe"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#236cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Full 5-stage workflow</li>
+          <li><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="#e8f0fe"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#236cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>3 review cycles</li>
+        </ul>
+        <button class="btn-card" style="font-size:11px;padding:9px;border-radius:9px">Get started</button>
+      </div>
+      <div class="plan-card-d featured">
+        <div style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.2);color:#fff;font-size:9px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:3px 10px;border-radius:50px;margin-bottom:9px"><span style="width:4px;height:4px;background:#00fff5;border-radius:50%;flex-shrink:0"></span>Popular</div>
+        <div style="font-size:24px;font-weight:500;letter-spacing:-2px;color:#fff;line-height:1;margin-bottom:4px">$249<span style="font-size:11px;font-weight:400;color:rgba(255,255,255,.6)">/mo</span></div>
+        <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:4px">Growth</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.7);margin-bottom:12px">Unlimited apps.</div>
+        <div style="height:1px;background:rgba(255,255,255,.2);margin-bottom:12px"></div>
+        <ul class="plan-list-d">
+          <li class="wh"><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="rgba(255,255,255,.2)"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Unlimited apps</li>
+          <li class="wh"><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="rgba(255,255,255,.2)"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>AI voice input</li>
+        </ul>
+        <button class="btn-white" style="font-size:11px;padding:9px;width:100%">Get started</button>
+      </div>
+      <div class="plan-card-d">
+        <div style="font-size:24px;font-weight:500;letter-spacing:-2px;color:var(--ink);line-height:1;margin-bottom:4px">$499<span style="font-size:11px;font-weight:400;color:var(--muted)">/mo</span></div>
+        <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px">Enterprise</div>
+        <div style="font-size:11px;color:var(--muted);margin-bottom:12px">Multi-org.</div>
+        <div style="height:1px;background:var(--border);margin-bottom:12px"></div>
+        <ul class="plan-list-d">
+          <li><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="#e8f0fe"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#236cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Multi-user access</li>
+          <li><svg class="chk-d" viewBox="0 0 13 13"><circle cx="6.5" cy="6.5" r="6.5" fill="#e8f0fe"/><path d="M4 6.5l2 2 3.5-3.5" stroke="#236cff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>White-label + API</li>
+        </ul>
+        <button class="btn-card" style="font-size:11px;padding:9px;border-radius:9px">Get started</button>
+      </div>
+    </div>
+    <p class="card-body">Plan cards: radius 24px · 1.5px border. Price in Display font 52px / wt 500 / tracking -3px. Plan name 20px / wt 500. Featured card elevated <code>translateY(-16px)</code> with blue glow shadow.</p>
+  </div>
+</div>
+
+<!-- ══ 05 SPACING ══ -->
+<div class="section" id="s05">
+  <div class="section-header"><span class="sh-num">05</span><div class="sh-line"></div><span class="sh-title">Spacing & layout</span></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-label">Spacing scale</div>
+      <div class="spacing-row"><div class="sp-bar" style="width:8px"></div><span class="sp-val">8px</span><span class="sp-use">Tag cloud, icon pairs</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:12px"></div><span class="sp-val">12px</span><span class="sp-use">Card list rows, nav gaps</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:16px"></div><span class="sp-val">16px</span><span class="sp-use">Bento grid gap, eyebrow margin</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:20px"></div><span class="sp-val">20px</span><span class="sp-use">Step list, plan feature gap</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:28px"></div><span class="sp-val">28px</span><span class="sp-use">Card inner bottom margin</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:36px"></div><span class="sp-val">36px</span><span class="sp-use">Card padding, sub-sections</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:48px"></div><span class="sp-val">48px</span><span class="sp-use">Page horizontal padding</span></div>
+      <div class="spacing-row"><div class="sp-bar" style="width:60px"></div><span class="sp-val">56–96px</span><span class="sp-use">Section vertical padding</span></div>
+    </div>
+    <div class="card">
+      <div class="card-label">Border radius</div>
+      <div class="radius-grid">
+        <div class="radius-item"><div class="radius-box" style="border-radius:8px"></div><div class="radius-label">8px<br>buttons, tags</div></div>
+        <div class="radius-item"><div class="radius-box" style="border-radius:10px"></div><div class="radius-label">10px<br>social icons</div></div>
+        <div class="radius-item"><div class="radius-box" style="border-radius:12px"></div><div class="radius-label">12px<br>inputs, CTAs</div></div>
+        <div class="radius-item"><div class="radius-box" style="border-radius:14px"></div><div class="radius-label">14px<br>email form</div></div>
+        <div class="radius-item"><div class="radius-box" style="border-radius:20px"></div><div class="radius-label">20px<br>bento cards</div></div>
+        <div class="radius-item"><div class="radius-box" style="border-radius:24px"></div><div class="radius-label">24px<br>plan cards</div></div>
+        <div class="radius-item"><div class="radius-box" style="border-radius:999px"></div><div class="radius-label">50px<br>pills, nav CTA</div></div>
+      </div>
+      <div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border)">
+        <p style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:5px">Max content widths</p>
+        <p class="card-body">Sections: <code>max-width: 1200px</code><br>Pricing: <code>max-width: 1100px</code><br>Hero paragraph: <code>max-width: 560px</code></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 06 TONE ══ -->
+<div class="section" id="s06">
+  <div class="section-header"><span class="sh-num">06</span><div class="sh-line"></div><span class="sh-title">Tone of voice</span></div>
+  <div class="g3" style="margin-bottom:12px">
+    <div class="voice-card"><div class="voice-attr">Confident</div><div class="voice-eg">"Win the funding. Skip the 80 hours."</div></div>
+    <div class="voice-card"><div class="voice-attr">Empathetic</div><div class="voice-eg">"35,000+ Australian non-profits missing out on critical funding."</div></div>
+    <div class="voice-card"><div class="voice-attr">Practical</div><div class="voice-eg">"15-minute bursts, three review sessions."</div></div>
+    <div class="voice-card"><div class="voice-attr">Credible</div><div class="voice-eg">"ACNC aligned. SmartyGrants ready. AWS ap-southeast-2."</div></div>
+    <div class="voice-card"><div class="voice-attr">Direct</div><div class="voice-eg">"Export and submit. Formatted, compliant, done."</div></div>
+    <div class="voice-card"><div class="voice-attr">Australian</div><div class="voice-eg">"organisation.org.au · ACNC · DGR · NFP · Pty Ltd"</div></div>
+  </div>
+  <div class="card">
+    <div class="card-label">Tagline</div>
+    <p style="font-size:17px;color:var(--muted);font-style:italic;font-weight:300;margin-bottom:10px">"From story to submission — toward granting"</p>
+    <p class="card-body">Footer use only. Italicised, muted, never a headline. Numbers always numeric — "20–80h", "$99", "2–3h", "35,000+". Pilot-stage pill copy: "Beachhead Pilot — Now Open."</p>
+  </div>
+</div>
+
+<!-- ══ 07 RULES ══ -->
+<div class="section" id="s07">
+  <div class="section-header"><span class="sh-num">07</span><div class="sh-line"></div><span class="sh-title">Brand rules</span></div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-label" style="color:#16a34a">Do</div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Always render "Scribe" in brand blue <code>#236cff</code></p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Use gradient text only on hero H1 and major headings</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Set eyebrows in UPPERCASE with 1.2–1.4px letter-spacing</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Use Display font for all headings and large numerals</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Pair stat numbers with muted 14px descriptor text</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Apply frosted glass to nav on scroll (blur + opacity)</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Use grid backgrounds in hero sections at 0.06–0.1 opacity</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Card hover: <code>translateY(-3px)</code> + blue border tint</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Reference ACNC / DGR / SmartyGrants in compliance copy</p></div>
+      <div class="rule-item rule-do"><div class="rule-icon">✓</div><p class="rule-text">Specify AWS ap-southeast-2 for all security contexts</p></div>
+    </div>
+    <div class="card">
+      <div class="card-label" style="color:#dc2626">Don't</div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Render "Funding" in blue — ink colour only</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Apply gradient to body or supporting text</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Reuse the animated hot-gradient outside the featured plan</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Use border-radius below 8px on any UI element</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Rotate, skew, or distort the wordmark</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Apply drop-shadows to cards (hover uses border-colour change)</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Use <code>#00fff5</code> cyan anywhere except the featured plan dot</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Drop font size below 11px anywhere in the UI</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Spell out numbers in stats — always use numerals</p></div>
+      <div class="rule-item rule-dont"><div class="rule-icon">✕</div><p class="rule-text">Use dark backgrounds without strong design purpose</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 08 MOTION ══ -->
+<div class="section" id="s08">
+  <div class="section-header"><span class="sh-num">08</span><div class="sh-line"></div><span class="sh-title">Motion & animation</span></div>
+  <div class="card">
+    <div class="motion-row"><div class="motion-name">Marquee scroll</div><div class="motion-spec"><code>translateX(0) → translateX(-50%)</code> · 35s · linear · infinite</div></div>
+    <div class="motion-row"><div class="motion-name">Pill dot pulse</div><div class="motion-spec"><code>box-shadow: 0→7px rgba(35,108,255,0)</code> · 1.8s · ease-out · infinite</div></div>
+    <div class="motion-row"><div class="motion-name">Hot gradient shift</div><div class="motion-spec"><code>background-position: 0%→100%→0%</code> · 6s · ease · infinite (featured plan only)</div></div>
+    <div class="motion-row"><div class="motion-name">Hero subtitle rotate</div><div class="motion-spec">Fade out + <code>translateY(12px)</code> → text swap → fade in · 0.5s ease · interval 5s</div></div>
+    <div class="motion-row"><div class="motion-name">Bar chart reveal</div><div class="motion-spec">Width <code>0 → target%</code> on IntersectionObserver · 1.2s · <code>cubic-bezier(.16,1,.3,1)</code></div></div>
+    <div class="motion-row"><div class="motion-name">Card hover lift</div><div class="motion-spec"><code>translateY(-3px)</code> + border-color tint · 0.25s ease</div></div>
+    <div class="motion-row"><div class="motion-name">Toast notification</div><div class="motion-spec"><code>translateY(80px)→0 + opacity 0→1</code> · 0.35s · <code>cubic-bezier(.16,1,.3,1)</code> · auto-hides 3.8s</div></div>
+    <div class="motion-row"><div class="motion-name">Nav frosted glass</div><div class="motion-spec">bg opacity + backdrop-blur on scroll >40px · <code>transition: .35s</code></div></div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="guide-footer">
+  <div class="foot-logo">Funding<span>Scribe</span></div>
+  <p>Brand Guide v1.0 · FundingScribe Pty Ltd · ABN 00 000 000 000</p>
+  <p>© 2026 · Australian-made</p>
+</div>
+
+</div>
+</body>
+</html>
