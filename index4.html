@@ -36,8 +36,8 @@ h1,h2,h3,h4,h5,h6{font-family:'Momo Trust Display',sans-serif;font-weight:400}
 .nav-cta:hover{background:var(--blue2)}
 
 /* HERO */
-.hero{min-height:calc(100vh - 64px);position:relative;background:linear-gradient(to top,#cce0fd 0%,#f5f9ff 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgb(136 175 255/.1) 1px,transparent 1px),linear-gradient(90deg,rgb(136 175 255/.1) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
+.hero{min-height:calc(100vh - 64px);position:relative;background:linear-gradient(to top,#d4eeff 0%,#f5f9ff 100%);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(136,175,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(136,175,255,.1) 1px,transparent 1px);background-size:70px 70px;pointer-events:none}
 .hero-main{position:relative;z-index:1;padding:100px 48px;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
 .pill-label{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#236cff;font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:28px;font-family:'Momo Trust Sans',sans-serif}
 .pill-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse 1.8s ease-out infinite;flex-shrink:0}
@@ -56,7 +56,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Momo Trust Display',sans-serif;font-weight:400}
 
 /* MARQUEE */
 .marquee{background:#3e3e3e;height:42px;overflow:hidden;display:flex;align-items:center}
-.marquee-track{display:flex;animation:slide 35s linear infinite;white-space:nowrap}
+.marquee-track{display:flex;animation:slide 40s linear infinite;white-space:nowrap}
 .marquee-item{font-size:11px;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:#fff;padding:0 32px;border-right:1px solid rgba(255,255,255,.2);display:flex;align-items:center;height:42px;font-family:'Momo Trust Sans',sans-serif}
 
 /* KEYFRAMES */
@@ -102,7 +102,7 @@ h1,h2,h3,h4,h5,h6{font-family:'Momo Trust Display',sans-serif;font-weight:400}
 .cm-lbl{font-size:11px;font-weight:600;color:var(--muted);width:90px;flex-shrink:0;text-align:right}
 .cm-bar-wrap{flex:1;height:8px;background:var(--border);border-radius:50px;overflow:hidden}
 .cm-fill{height:100%;border-radius:50px;width:0;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
-.cm-fill.m{background:var(--border)}
+.cm-fill.m{background:var(--blue);width:100%}
 .cm-fill.g{background:var(--blue)}
 .cm-val{font-size:12px;font-weight:700;color:var(--ink);width:52px;flex-shrink:0}
 .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
@@ -175,7 +175,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
 .foot-logo{font-size:20px;font-weight:900;color:#fff;letter-spacing:-.4px;margin-bottom:10px;font-family:'Momo Trust Sans',sans-serif}
 .foot-logo span{color:var(--blue)}
-.foot-tagline{font-size:13px;color:rgba(255,255,255,.25);line-height:1.8;font-style:italic;max-width:250px;font-family:'Momo Trust Sans',sans-serif}
+.foot-tagline{font-size:13px;color:rgba(255,255,255,.25);line-height:1.8;font-style:italic;max-width:250px;font-family:'Momo Trust Sans',sans-serif;margin-bottom:4px}
 .foot-social{display:flex;gap:10px;margin-top:20px}
 .foot-social a{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;text-decoration:none}
 .foot-social a:hover{background:var(--blue);transform:translateY(-3px)}
@@ -242,10 +242,10 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 <div class="hero">
   <div class="hero-grid"></div>
   <div class="hero-main">
-    <div class="pill-label"><span class="pill-dot"></span>Beachhead Pilot — Now Open</div>
+    <div class="pill-label"><span class="pill-dot"></span>AI-Powered Grant Writing for Australian NFPs</div>
     <h1 class="hero-h1">Win the funding.</h1>
     <div class="hero-line3" id="hero-line3">Skip the 80 hours.</div>
-    <p class="hero-p">Transform your organisation's existing documents into submission-ready grant applications. FundingScribe is built for the 35,000+ Australian non-profits missing out on critical funding every year.</p>
+    <p class="hero-p">Transform your organization's existing documents into submission-ready grant applications. FundingScribe is built for the thousands of Australian non-profits missing out on critical funding every year.</p>
     <div class="email-form">
       <input type="email" id="h-email" placeholder="your@organisation.org.au">
       <button class="btn-blue" onclick="sub('h-email')">Get weekly matches</button>
@@ -253,7 +253,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
         <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
       </button>
     </div>
-    <p class="hero-proof">🇦🇺 Designed for Australian non-profits — ACNC aligned, SmartyGrants ready.</p>
+    <p class="hero-proof">🇦🇺 Designed for Australian non-profits - ACNC aligned, SmartyGrants ready.</p>
   </div>
 </div>
 
@@ -310,12 +310,15 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
       <div class="b-card b1">
         <div class="card-tag">Compliance engine</div>
         <h3>Built-in ACNC &amp; DGR validation. Zero compliance surprises.</h3>
-        <p>Budget template schemas, selection criteria alignment scoring, and real-time compliance checks - before you lodge a single page.</p>
+        <p>The automated compliance engine enforces grant-specific rules by:</p>
         <div class="step-list">
-          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text"><span class="sl-strong">ACNC registration verified automatically</span></div></div>
-          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text"><span class="sl-strong">DGR endorsement status checked</span></div></div>
-          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text"><span class="sl-strong">Budget schema matches funder requirements</span></div></div>
+          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text">Validating eligible expenditure</div></div>
+          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text">Checking word counts and format requirements</div></div>
+          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text">Ensuring section completeness</div></div>
+          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text">Flagging missing attachments or documents</div></div>
+          <div class="sl-item"><div class="sl-num">✓</div><div class="sl-text">Performing final pre-submit validation</div></div>
         </div>
+        <p style="margin-top:16px">Automatically checks grant rules during draft reviews (Review 2 &amp; 3) and Final Check (10-15 min), highlights gaps for quick user fixes, and keeps total application time to 2-3 hours while reducing rejection risk.</p>
       </div>
 
       <div class="b-card b2">
@@ -323,7 +326,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
         <h3>From your documents to a submission-ready draft.</h3>
         <div class="step-list">
           <div class="sl-item"><div class="sl-num">1</div><div class="sl-text"><span class="sl-strong">Onboard your source of truth</span>Upload reports once. We index your projects, capabilities, and needs.</div></div>
-          <div class="sl-item"><div class="sl-num">2</div><div class="sl-text"><span class="sl-strong">Get your weekly match</span>Grants matched to your specific projects — not generic lists.</div></div>
+          <div class="sl-item"><div class="sl-num">2</div><div class="sl-text"><span class="sl-strong">Get your weekly match</span>Grants matched to your specific projects - not generic lists.</div></div>
           <div class="sl-item"><div class="sl-num">3</div><div class="sl-text"><span class="sl-strong">Talk through your project</span>AI voice or chat - 15 minutes while walking to your car.</div></div>
           <div class="sl-item"><div class="sl-num">4</div><div class="sl-text"><span class="sl-strong">Collaborative review</span>Strategy, Evidence, and Final Check - three short sessions.</div></div>
           <div class="sl-item"><div class="sl-num">5</div><div class="sl-text"><span class="sl-strong">Export and submit</span>Word, PDF, or SmartyGrants-ready. Formatted, compliant, done.</div></div>
@@ -350,11 +353,11 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 
       <div class="b-card b6">
         <div class="card-tag">Time savings</div>
-        <h3>From 80 hours to 2–3. Without compromising quality.</h3>
+        <h3>From 80 hours to 2-3. Without compromising quality.</h3>
         <p>Leaders don't need to be grant writing experts. They just need 15-minute bursts to share their vision.</p>
         <div class="comparison-mini">
-          <div class="cm-row"><div class="cm-lbl">Manual</div><div class="cm-bar-wrap"><div class="cm-fill m" id="bar-m"></div></div><div class="cm-val">20–80h</div></div>
-          <div class="cm-row"><div class="cm-lbl">FundingScribe</div><div class="cm-bar-wrap"><div class="cm-fill g" id="bar-g"></div></div><div class="cm-val" style="color:var(--blue)">2–3h</div></div>
+          <div class="cm-row"><div class="cm-lbl">Manual</div><div class="cm-bar-wrap"><div class="cm-fill m" id="bar-m"></div></div><div class="cm-val">20-80h</div></div>
+          <div class="cm-row"><div class="cm-lbl">FundingScribe</div><div class="cm-bar-wrap"><div class="cm-fill g" id="bar-g"></div></div><div class="cm-val" style="color:var(--blue)">2-3h</div></div>
         </div>
       </div>
 
@@ -374,7 +377,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     <div class="pricing-header">
       <span class="section-eyebrow">Simple, transparent pricing</span>
       <h2>Pick your plan.<br><span style="background:linear-gradient(135deg,#236cff 0%,#00bdff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Start winning grants.</span></h2>
-    <p>No lock-in contracts. Start free and scale as your funding pipeline grows.</p>
+      <p>No lock-in contracts. Start free and scale as your funding pipeline grows.</p>
     </div>
     <div class="plan-row">
 
@@ -384,7 +387,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
         <p class="plan-tagline">For non-profits just getting started with grant funding.</p>
         <div class="plan-divider"></div>
         <ul class="plan-list">
-          <li><svg class="chk" viewBox="0 0 17 17"><circle cx="8.5" cy="8.5" r="8.5" fill="#e8f0fe"/><path d="M5.5 8.5l2 2 4-4" stroke="#236cff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Weekly email — top 3 matches</li>
+          <li><svg class="chk" viewBox="0 0 17 17"><circle cx="8.5" cy="8.5" r="8.5" fill="#e8f0fe"/><path d="M5.5 8.5l2 2 4-4" stroke="#236cff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Weekly email - top 3 matches</li>
           <li><svg class="chk" viewBox="0 0 17 17"><circle cx="8.5" cy="8.5" r="8.5" fill="#e8f0fe"/><path d="M5.5 8.5l2 2 4-4" stroke="#236cff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Eligibility overview per grant</li>
           <li><svg class="chk" viewBox="0 0 17 17"><circle cx="8.5" cy="8.5" r="8.5" fill="#e8f0fe"/><path d="M5.5 8.5l2 2 4-4" stroke="#236cff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Basic funding calendar</li>
         </ul>
@@ -451,7 +454,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     <div class="cta-left">
       <div class="eyebrow">Get in touch</div>
       <h2>Have a question?<br><em>We'd love</em><br>to hear from you.</h2>
-      <p>Whether you're curious about how FundingScribe works, need help getting started, or want to explore a partnership — our team is ready to help.</p>
+      <p>Whether you're curious about how FundingScribe works, need help getting started, or want to explore a partnership - our team is ready to help.</p>
     </div>
     <div class="cta-right">
       <div>
@@ -474,17 +477,11 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     <div class="foot-grid">
       <div>
         <div class="foot-logo">Funding<span>Scribe</span></div>
-        <p class="foot-tagline">"From story to submission-toward granting"</p>
+        <p class="foot-tagline">"Grants ready in minutes, not months"</p>
         <div class="foot-social">
-          <a href="#" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#1a1a2a"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#1a1a2a" stroke-width="2" stroke-linecap="round"/></svg>
-          </a>
-          <a href="#" aria-label="X">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#1a1a2a"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#1a1a2a" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
         </div>
       </div>
       <div class="foot-col"><h5>Platform</h5><a href="#bento">Why FundingScribe</a><a href="#pricing">Pricing</a><a href="#cta">Contact</a></div>
@@ -514,8 +511,8 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     var name=document.getElementById('cta-name');
     var email=document.getElementById('cta-email');
     var valid=true;
-    if(!name||!name.value.trim()){name.style.borderColor='rgba(239,100,100,.6)';valid=false;}
-    if(!email||!email.value.trim()||email.value.indexOf('@')<0){email.style.borderColor='rgba(239,100,100,.6)';valid=false;}
+    if(!name.value.trim()){name.style.borderColor='rgba(239,100,100,.6)';valid=false;}
+    if(!email.value.trim()||email.value.indexOf('@')<0){email.style.borderColor='rgba(239,100,100,.6)';valid=false;}
     if(!valid){setTimeout(function(){name.style.borderColor='';email.style.borderColor='';},2000);return;}
     showToast('Message sent! We\'ll be in touch within one business day.');
     name.value='';email.value='';
@@ -538,14 +535,13 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 
   document.getElementById('foot-year').textContent=new Date().getFullYear();
 
-  var tags=['35,000+ Australian NFPs','Government grants','R&D tax incentives','Innovation funds','Philanthropic trusts','ACNC compliant','SmartyGrants export','Weekly grant digest','AI voice input','2–3 hour turnaround','94% match accuracy','Australian data sovereignty'];
+  var tags=['Weekly Matched Emails','Project-to-Grant Matching','Rich Org Profile','Conversational Scoping','Staged Draft Reviews','Auto Compliance Engine','Submission-Ready Export','Free Matching Tier','Multi-Funding Support','Continuous Grant Monitoring','Smart Match Rationale','Progressive Profile Enrichment','Gap-Flagging Reviews','Habit-Loop Emails','2-3 hour turnaround','ACNC compliant','94% match accuracy','SmartyGrants Ready'];
   var html='';
   tags.concat(tags).forEach(function(s){html+='<span class="marquee-item">'+s+'</span>';});
   document.getElementById('mtrack').innerHTML=html;
 
-  var nav=document.getElementById('navbar');
   window.addEventListener('scroll',function(){
-    nav.classList.toggle('scrolled',(window.scrollY||document.documentElement.scrollTop)>40);
+    document.getElementById('navbar').classList.toggle('scrolled',(window.scrollY||document.documentElement.scrollTop)>40);
   },{passive:true});
 
   var barsAnimated=false;
@@ -554,9 +550,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
     new IntersectionObserver(function(entries){
       if(entries[0].isIntersecting&&!barsAnimated){
         barsAnimated=true;
-        var bm=document.getElementById('bar-m');
         var bg=document.getElementById('bar-g');
-        if(bm)bm.style.width='100%';
         if(bg)setTimeout(function(){bg.style.width='7%';},100);
       }
     },{threshold:.3}).observe(barTarget);
