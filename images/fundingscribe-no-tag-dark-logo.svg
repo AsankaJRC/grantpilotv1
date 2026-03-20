@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="645" height="115" viewBox="0 0 645 115">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.099" y1="1.147" x2="0.575" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3a8ef0"/>
+      <stop offset="1" stop-color="#236cff"/>
+    </linearGradient>
+  </defs>
+  <g id="fundingscribe-no-tag-dark-logo" transform="translate(3220.377 -669)">
+    <g id="Group_22" data-name="Group 22" transform="translate(-3220.377 668.664)">
+      <text id="ngScribe" transform="translate(645 91.336)" fill="#fff" font-size="89" font-family="MomoTrustDisplay-Regular, Momo Trust Display"><tspan x="-400.589" y="0">ng</tspan><tspan y="0" fill="#236cff">Scribe</tspan></text>
+      <text id="Fund" transform="translate(221 91.336)" fill="#fff" font-size="89" font-family="MomoTrustDisplay-Regular, Momo Trust Display"><tspan x="-220.631" y="0">Fund</tspan></text>
+      <rect id="Rectangle_51" data-name="Rectangle 51" width="14" height="51" transform="translate(226.157 40.336)" fill="#fff"/>
+    </g>
+    <g id="Group_23" data-name="Group 23" transform="translate(-5719.936 -917.619)">
+      <path id="Path_7" data-name="Path 7" d="M2742.7,1609.184a17.234,17.234,0,0,0-3.3,8.982h-13.037a17.23,17.23,0,0,0-3.3-8.987l-.034-.047a29.43,29.43,0,0,0,8.458-13.462,0,0,0,0,1,0,0l.01-.032a.265.265,0,0,1,.513.064v11.086a2.488,2.488,0,0,0-1.619,2.332c0,.02,0,.04,0,.06a2.488,2.488,0,0,0,4.974,0c0-.02,0-.04,0-.06a2.488,2.488,0,0,0-1.62-2.332V1595.7a.264.264,0,0,1,.513-.049l0,.012a29.42,29.42,0,0,0,8.431,13.518Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+      <path id="Path_8" data-name="Path 8" d="M2795.636,2410.324h-16.164a1.862,1.862,0,0,1,1.684-1.781,1.75,1.75,0,0,1,.176-.009h12.443a1.86,1.86,0,0,1,1.861,1.79Z" transform="translate(-54.748 -788.698)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>
