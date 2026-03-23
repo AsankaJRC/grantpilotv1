@@ -311,9 +311,16 @@
     var el=document.getElementById(id);
     if(!el)return;
     var v=el.value.trim();
-    if(!v||v.indexOf('@')<0){
+    if(!v){
       el.style.borderColor='rgba(239,100,100,.6)';
-      setTimeout(function(){el.style.borderColor='';},2000);
+      showToast('Please enter your email address before continuing.');
+      setTimeout(function(){el.style.borderColor='';},3000);
+      return;
+    }
+    if(v.indexOf('@')<0){
+      el.style.borderColor='rgba(239,100,100,.6)';
+      showToast('Please enter a valid email address (e.g. you@organisation.org.au).');
+      setTimeout(function(){el.style.borderColor='';},3000);
       return;
     }
     var ctaEmail=document.getElementById('cta-email');
