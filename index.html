@@ -35,8 +35,8 @@
     <p class="hero-p">Transform your organization's existing documents into submission-ready grant applications. FundingScribe is built for the thousands of Australian non-profits missing out on critical funding every year.</p>
     <div class="email-form">
       <input type="email" id="h-email" placeholder="your@organisation.org.au">
-      <button class="btn-blue" onclick="sub('h-email')">Get weekly matches</button>
-      <button class="btn-blue-icon" onclick="sub('h-email')" aria-label="Get weekly matches">
+      <button class="btn-blue" onclick="sub('h-email')">Scribe with us</button>
+      <button class="btn-blue-icon" onclick="sub('h-email')" aria-label="Scribe with us">
         <svg viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4 20-7z"/></svg>
       </button>
     </div>
@@ -316,8 +316,10 @@
       setTimeout(function(){el.style.borderColor='';},2000);
       return;
     }
-    showToast('You\'re in! Check your inbox for your first match email.');
+    var ctaEmail=document.getElementById('cta-email');
+    if(ctaEmail)ctaEmail.value=v;
     el.value='';
+    document.getElementById('cta').scrollIntoView({behavior:'smooth'});
   }
   window.sub=sub;
 
