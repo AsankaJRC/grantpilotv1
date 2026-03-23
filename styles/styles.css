@@ -241,6 +241,20 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
 .btn-ghost{background:transparent;color:rgba(255,255,255,.6);border:1.5px solid rgba(255,255,255,.2);border-radius:50px;padding:14px 28px;font-family:'Momo Trust Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:.15s;text-decoration:none;display:inline-block}
 .btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
 
+/* PRIVACY & TERMS PAGES */
+.policy-wrap{max-width:780px;margin:0 auto;padding:80px 48px 100px}
+.policy-wrap h1{font-size:clamp(32px,4vw,52px);font-family:'Momo Trust Display',sans-serif;font-weight:400;letter-spacing:-2px;color:var(--ink2);margin-bottom:12px;line-height:1.05}
+.policy-meta{font-size:13px;color:var(--muted);margin-bottom:56px;font-family:'Momo Trust Sans',sans-serif}
+.policy-wrap h2{font-size:20px;font-family:'Momo Trust Display',sans-serif;font-weight:500;letter-spacing:-.4px;color:var(--ink2);margin:48px 0 14px}
+.policy-wrap p{font-size:15px;color:var(--muted);line-height:1.85;margin-bottom:16px;font-family:'Momo Trust Sans',sans-serif}
+.policy-wrap ul{margin:0 0 16px 20px;display:flex;flex-direction:column;gap:8px}
+.policy-wrap ul li{font-size:15px;color:var(--muted);line-height:1.75;font-family:'Momo Trust Sans',sans-serif}
+.policy-wrap a{color:var(--blue);text-decoration:none}
+.policy-wrap a:hover{text-decoration:underline}
+.policy-divider{height:1px;background:var(--border);margin:40px 0}
+.policy-highlight{background:var(--blue3);border-left:3px solid var(--blue);border-radius:0 12px 12px 0;padding:18px 24px;margin-bottom:16px}
+.policy-highlight p{margin-bottom:0;color:var(--ink)}
+
 /* RESPONSIVE */
 @media(max-width:1100px){
   .bento-grid .b1,.bento-grid .b2,.bento-grid .b3,.bento-grid .b4,.bento-grid .b5,.bento-grid .b6,.bento-grid .b7{grid-column:span 6}
@@ -259,6 +273,7 @@ footer{background:var(--ink2);border-top:1px solid rgba(255,255,255,.06);padding
   .team-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:768px){
+  .policy-wrap{padding:48px 24px 72px}
   .nav{padding:0 20px}.nav-links{display:none}
   .hero-main{padding:72px 24px 64px}
   .btn-blue{display:none}
