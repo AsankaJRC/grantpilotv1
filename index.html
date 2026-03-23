@@ -248,6 +248,10 @@
         <div class="cta-field-label">Your work email</div>
         <input class="cta-input" type="email" id="cta-email" placeholder="your@organisation.org.au">
       </div>
+      <div>
+        <div class="cta-field-label">Your message</div>
+        <textarea class="cta-input" id="cta-message" placeholder="Tell us how we can help…" rows="4" style="resize:vertical;line-height:1.6"></textarea>
+      </div>
       <button class="btn-blue-lg" onclick="submitContact()">Send message</button>
       <p class="cta-note">We'll get back to you within one business day.</p>
     </div>
@@ -294,12 +298,18 @@
   function submitContact(){
     var name=document.getElementById('cta-name');
     var email=document.getElementById('cta-email');
+    var message=document.getElementById('cta-message');
     var valid=true;
     if(!name.value.trim()){name.style.borderColor='rgba(239,100,100,.6)';valid=false;}
     if(!email.value.trim()||email.value.indexOf('@')<0){email.style.borderColor='rgba(239,100,100,.6)';valid=false;}
-    if(!valid){setTimeout(function(){name.style.borderColor='';email.style.borderColor='';},2000);return;}
+    if(!message.value.trim()){message.style.borderColor='rgba(239,100,100,.6)';valid=false;}
+    if(!valid){
+      showToast('Please fill in all fields before sending.');
+      setTimeout(function(){name.style.borderColor='';email.style.borderColor='';message.style.borderColor='';},2000);
+      return;
+    }
     showToast('Message sent! We\'ll be in touch within one business day.');
-    name.value='';email.value='';
+    name.value='';email.value='';message.value='';
   }
   window.submitContact=submitContact;
 
